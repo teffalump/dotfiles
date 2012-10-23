@@ -19,6 +19,7 @@ definekey top XF86AudioNext exec cmus-remote -n
 bind f exec firefox
 bind e exec thunderbird
 bind o exec libreoffice
+bind c exec uxterm
 
 # more intuitive splits
 bind v vsplit
