@@ -2,6 +2,10 @@ HISTFILE=~/.histfile
 HISTSIZE=2000
 SAVEHIST=10000
 
+setopt nobeep
+setopt autocd
+
+
 #vi or emac-style? v = vim, e = emac
 bindkey -v
 
@@ -28,12 +32,12 @@ promptinit
 autoload -U colors && colors
 
 # Alias definitions
-if [ -f ~/.zsh_aliases ]; then
+if [[ -r ~/.zsh_aliases ]]; then
     . ~/.zsh_aliases
 fi
 
 # Function definitions
-if [ -f ~/.zsh_functions ]; then
+if [[ -r ~/.zsh_functions ]]; then
     . ~/.zsh_functions
 fi
 
@@ -42,4 +46,10 @@ fi
 PROMPT=$'\n%{$fg[red]%}%(0?..!!)%{$fg[yellow]%}[!] %{$fg[green]%}%n@%m %{$fg[white]%}%j %{$fg[blue]%}$(current_branch) %{$fg[cyan]%}%~\n%{$fg[green]%}%(!.#.$) '
 
 #right prompt
-#RPROMPT='%{\n%}%{$fg[green]%}%# '
+#RPROMPT=' '
+
+#zsh named dirs
+music=/mnt/sda2/Music
+writing=/mnt/sda2/Writing
+books=/mnt/sda2/Books
+: ~writing ~books ~music

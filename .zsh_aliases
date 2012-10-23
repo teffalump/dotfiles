@@ -9,7 +9,8 @@ alias du='du -h'
 alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 alias nocomment='grep -Ev '\''^(#|$)'\'''
 alias wget='wget -c'
-alias tundown='sudo ip tuntap del'
+alias tundown='sudo ip link del'
+alias numfiles='ls -A1 | wc -l'
 
 #"nuke lamers from orbit", lol
 alias banish="varnishncsa -d | grep \/ip | grep -i wget | awk ‘{ print $1 }’ | sort | uniq | tee -a /etc/hosts.deny"
