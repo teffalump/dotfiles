@@ -1,0 +1,7 @@
+xterm*faceName:  inconsolata-g:bold:pixelsize=18
+xterm*background: black
+xterm*foreground: green
+xterm*saveLines:  5000
+xterm*scrollBar:  true
+xterm*jumpScroll:  true
+xterm*multiScroll:  true

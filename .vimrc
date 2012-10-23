@@ -1,0 +1,135 @@
+" Pathogen
+call pathogen#infect()
+filetype plugin indent on
+syntax on
+
+" define your colors
+if !exists("autocmd_colorscheme_loaded")
+  let autocmd_colorscheme_loaded = 1
+  autocmd ColorScheme * highlight TodoRed      ctermbg=darkblue guibg=#002b37 ctermfg=darkred     guifg=#E01B1B
+  autocmd ColorScheme * highlight TodoOrange   ctermbg=darkblue guibg=#002b37 ctermfg=darkmagenta guifg=#E0841B
+  autocmd ColorScheme * highlight TodoYellow   ctermbg=darkblue guibg=#002b37 ctermfg=darkyellow  guifg=#E0D91B
+endif
+
+" labels for colors
+if has("autocmd")
+    if v:version > 701
+        autocmd Syntax * call matchadd('TodoRed',  '\W\zs\(FIX\)')
+        autocmd Syntax * call matchadd('TodoOrange', '\W\zs\(TODO\)')
+        autocmd Syntax * call matchadd('ToDoYellow', '\W\zs\(DEBUG\)')
+    endif
+endif
+
+let mapleader = ","
+set modelines=0
+set nocompatible
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set nobackup
+set expandtab
+let g:solarized_termcolors=256
+colorscheme solarized
+set background=dark
+set encoding=utf-8
+set scrolloff=3
+set autoindent
+set showmode
+set showcmd
+set hidden
+set wildmenu
+set wildmode=list:longest
+set foldmethod=indent
+set visualbell
+set cursorline
+set ttyfast
+set ruler
+set backspace=indent,eol,start
+set laststatus=2
+set relativenumber
+set undofile
+set ignorecase
+set smartcase
+set gdefault
+set incsearch
+set showmatch
+set hlsearch
+set wrap
+set textwidth=79
+set formatoptions=qrn1
+set list
+set listchars=tab:>-,eol:$,trail:~,nbsp:_
+set gfn=Consolas\ Bold\ 12
+set guioptions-=T
+set autochdir
+set statusline=%F%m%r%h%w\ [TYPE=%Y\ %{&ff}]\ %=%c.%l/%L\ (%p%%)
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+nnoremap <leader><space> :noh<cr>
+nnoremap / /\v
+vnoremap / /\v
+inoremap kj <Esc>
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+nnoremap j gj
+nnoremap k gk
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
+nnoremap ; :
+
+" Vimroom
+nnoremap <silent> <Leader>mz :VimroomToggle<cr>
+
+
+" Viewport Controls
+" ie moving between split panes
+map <silent><leader>h <C-w>h
+map <silent><leader>j <C-w>j
+map <silent><leader>k <C-w>k
+map <silent><leader>l <C-w>l
+
+" map F7 to toggle the Tag Listing
+" map <C-T> :TlistToggle<CR> 
+
+" edit my .vimrc file in a split
+map <leader>v :sp ~/.vimrc<cr>
+
+" edit my .vimrc file
+map <leader>e :e ~/.vimrc<cr>
+
+" update the system settings from my vimrc file
+map <leader>u :source ~/.vimrc<cr>
+
+au FocusLost * :wa
+au BufWinLeave * mkview
+au BufWinEnter * silent loadview
+
+
+au FileType py set smartindent
+
+" Tagbar
+autocmd VimEnter * nested :TagbarOpen 
+let g:tagbar_usearrows = 1
+nnoremap <leader>z :TagbarToggle<CR>
+
+" togglebg
+map <F5> :ToggleBG<CR> 
+
+"recursively searches directory for 'tags' file
+"set tags=tags;$HOME/.vim/tags/ 
+
+"" TagList Plugin Configuration
+"let Tlist_Ctags_Cmd='/usr/bin/ctags' " point taglist to ctags
+"let Tlist_GainFocus_On_ToggleOpen = 1 " Focus on the taglist when its toggled
+"let Tlist_Close_On_Select = 1 " Close when something's selected
+"let Tlist_Use_Right_Window = 1 " Project uses the left window
+"let Tlist_File_Fold_Auto_Close = 1 " Close folds for inactive files
