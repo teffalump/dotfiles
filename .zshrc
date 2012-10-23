@@ -9,6 +9,8 @@ setopt autocd
 #vi or emac-style? v = vim, e = emac
 bindkey -v
 
+#case-ins, partial word, then substring
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 zstyle :compinstall filename '/home/cz/.zshrc'
 
 autoload -Uz compinit
