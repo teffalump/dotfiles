@@ -10,7 +10,11 @@ setopt autocd
 bindkey -v
 
 #case-ins, partial word, then substring
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*' matcher-list 'm:{a-z-}={A-Z_}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
+#match approximate
+zstyle ':completion:*' completer _complete _match _approximate
+
 zstyle :compinstall filename '/home/cz/.zshrc'
 
 autoload -Uz compinit
