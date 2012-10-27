@@ -4,6 +4,10 @@ SAVEHIST=10000
 
 setopt nobeep
 setopt autocd
+setopt histignorealldups
+setopt histverify
+setopt histfindnodups
+setopt histsavenodups
 
 
 #vi or emac-style? v = vim, e = emac
