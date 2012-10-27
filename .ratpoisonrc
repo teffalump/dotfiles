@@ -15,6 +15,7 @@ definekey top XF86AudioStop exec cmus-remote -s
 definekey top XF86AudioPrev exec cmus-remote -r
 definekey top XF86AudioNext exec cmus-remote -n
 
+
 #set easy program launches
 bind f exec firefox
 bind e exec thunderbird
@@ -25,8 +26,11 @@ bind c exec uxterm
 bind v vsplit
 bind h hsplit
 
+#start screen in detached mode (mostly for music)
+exec screen -d -m
+
 #create multiple workspaces
-exec /usr/bin/rpws init 5 -k
+exec /usr/bin/rpws init 3 -k
 
 # kill old dzen2 processes, set padding, and start the conky piping to dzen thing
 addhook quit exec killall dzen2
@@ -36,8 +40,3 @@ exec conky | dzen2 -ta c -e 'sigusr1=hide;sigusr2=unhide' -h '16' -fn 'inconsola
 # exec script to smartly toggle dzen --> all logic there
 #explicitly
 bind z exec ~/.ratpoison/dzconky.rp
-
-#when changing groups
-#addhook switchgroup set padding 0 16 0 0
-#addhook switchgroup set padding 0 0 0 0
-#addhook switchgroup exec pkill -SIGUSR1 dzen
