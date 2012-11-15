@@ -1,7 +1,8 @@
 alias v='vim'
 alias sv='sudo vim'
 alias back='cd -'
-alias ls='ls --color=auto'
+alias ls='ls -1 --color=auto'
+alias cp='cp --preserve'
 alias c='clear'
 alias grep='grep --color'
 alias df='df -h'
@@ -21,9 +22,9 @@ alias star_wars='telnet towel.blinkenlights.nl'
 #telnet nethack game
 alias nethack_server='telnet nethack.alt.org'
 
-#alias rwlan="sudo macchanger -A wlan0"
 alias flac2ogg='find . -name "*.flac" -print0 | xargs -0 oggenc -q 10'
 alias usage="du -h --max-depth=1 | sort -rh"
+alias tusage="du -h --max-depth=1 | sort -rh | head -n 20"
 alias off="xset dpms force off"
 alias update="sudo pacman -Syu"
 alias uninstall="sudo pacman -Rs"
