@@ -59,7 +59,7 @@ PROMPT=$'\n%{$fg[red]%}%(0?..!!)%{$fg[yellow]%}[!] %{$fg[green]%}%n@%m %{$fg[whi
 #RPROMPT=' '
 
 #zsh named dirs
-music=/mnt/sda2/Music
-writing=/mnt/sda2/Writing
-books=/mnt/sda2/Books
+music=/extra/Music
+writing=/extra/Writing
+books=/extra/Books
 : ~writing ~books ~music
