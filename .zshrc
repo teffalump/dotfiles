@@ -8,6 +8,7 @@ setopt histignorealldups
 setopt histverify
 setopt histfindnodups
 setopt histsavenodups
+setopt sharehistory
 
 
 #vi or emac-style? v = vim, e = emac

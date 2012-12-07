@@ -7,7 +7,7 @@ alias c='clear'
 alias grep='grep --color'
 alias df='df -h'
 alias du='du -h'
-alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
+#alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 alias nocomment='grep -Ev '\''^(#|$)'\'''
 alias wget='wget -c'
 alias tundown='sudo ip link del'
@@ -28,6 +28,7 @@ alias tusage="du -h --max-depth=1 | sort -rh | head -n 20"
 alias off="xset dpms force off"
 alias update="sudo pacman -Syu"
 alias uninstall="sudo pacman -Rs"
+alias mirror_update="sudo reflector --verbose --sort rate -l 30 --save /etc/pacman.d/mirrorlist"
 alias aur_update="yaourt -Syu --devel --aur"
 alias img_clean="exiftool -all="
 alias install="sudo pacman -S"
