@@ -1,7 +1,8 @@
-URxvt*faceName:  inconsolata-g:bold:pixelsize=18
-URxvt*background: black
-URxvt*foreground: green
-URxvt*saveLines:  5000
-URxvt*scrollBar_right:  true
-URxvt*jumpScroll:  true
-URxvt*multiScroll:  true
+URxvt.font: xft:inconsolata-g:bold:pixelsize=18
+URxvt.background: black
+URxvt.foreground: green
+URxvt.saveLines:  5000
+URxvt.scrollBar_right:  true
+URxvt.jumpScroll:  true
+URxvt.multiScroll:  true
+URxvt.letterSpace: -2
