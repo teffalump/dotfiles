@@ -1,7 +1,7 @@
-xterm*faceName:  inconsolata-g:bold:pixelsize=18
-xterm*background: black
-xterm*foreground: green
-xterm*saveLines:  5000
-xterm*scrollBar:  true
-xterm*jumpScroll:  true
-xterm*multiScroll:  true
+URxvt*faceName:  inconsolata-g:bold:pixelsize=18
+URxvt*background: black
+URxvt*foreground: green
+URxvt*saveLines:  5000
+URxvt*scrollBar_right:  true
+URxvt*jumpScroll:  true
+URxvt*multiScroll:  true
