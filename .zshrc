@@ -21,7 +21,7 @@ zstyle ':completion:*' completer _complete _match _approximate
 
 zstyle :compinstall filename '/home/cz/.zshrc'
 
-autoload -Uz compinit
+autoload -Uz compinit zcalc
 compinit
 
 setopt completealiases
