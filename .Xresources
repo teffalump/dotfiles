@@ -6,3 +6,4 @@ URxvt.scrollBar_right:  true
 URxvt.jumpScroll:  true
 URxvt.multiScroll:  true
 URxvt.letterSpace: -2
+URxvt.perl-ext-common: default,clipboard
