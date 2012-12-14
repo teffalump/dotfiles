@@ -14,7 +14,7 @@ definekey top XF86AudioPlay exec cmus-remote -u
 definekey top XF86AudioStop exec cmus-remote -s
 definekey top XF86AudioPrev exec cmus-remote -r
 definekey top XF86AudioNext exec cmus-remote -n
-definekey top XF86AudioMute exec ~/bin/togglemute
+definekey top XF86AudioMute exec pacmd set-sink-mute 0 $(if [ $(pacmd dump |grep set-sink-mute | cut -f 3 -d' ') = 'no' ]; then echo yes; else echo no; fi;)
 
 
 #set easy program launches
