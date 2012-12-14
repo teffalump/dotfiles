@@ -8,5 +8,5 @@ URxvt.multiScroll:  true
 URxvt.letterSpace: -2
 URxvt.perl-ext-common: default,clipboard
 URxvt.keysym.M-v: perl:clipboard:paste
-URxvt.keysym.M-c: perl:clipboard:cut
+URxvt.keysym.M-c: perl:clipboard:copy
 URxvt.keysym.M-C-v: perl:cliboard:paste_escaped
