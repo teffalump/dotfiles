@@ -14,6 +14,7 @@ definekey top XF86AudioPlay exec cmus-remote -u
 definekey top XF86AudioStop exec cmus-remote -s
 definekey top XF86AudioPrev exec cmus-remote -r
 definekey top XF86AudioNext exec cmus-remote -n
+definekey top XF86AudioMute exec ~/bin/togglemute
 
 
 #set easy program launches
