@@ -63,4 +63,6 @@ PROMPT=$'\n%{$fg[red]%}%(0?..!!)%{$fg[yellow]%}[!] %{$fg[green]%}%n@%m %{$fg[whi
 music=/extra/Music
 writing=/extra/Writing
 books=/extra/Books
-: ~writing ~books ~music
+torrents=~/Downloads/torrents
+downloads=~/Downloads/
+: ~writing ~books ~music ~downloads ~torrents
