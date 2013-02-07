@@ -86,9 +86,10 @@ nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 nnoremap ; :
 
+" delimitMate
+
 " Vimroom
 nnoremap <silent> <Leader>mz :VimroomToggle<cr>
-
 
 " Viewport Controls
 " ie moving between split panes
@@ -96,9 +97,6 @@ map <silent><leader>h <C-w>h
 map <silent><leader>j <C-w>j
 map <silent><leader>k <C-w>k
 map <silent><leader>l <C-w>l
-
-" map F7 to toggle the Tag Listing
-" map <C-T> :TlistToggle<CR> 
 
 " edit my .vimrc file in a split
 map <leader>v :sp ~/.vimrc<cr>
@@ -113,6 +111,7 @@ au FocusLost * :wa
 au BufWinLeave * mkview
 au BufWinEnter * silent loadview
 
+Hello world!
 
 au FileType py set smartindent
 
@@ -123,13 +122,3 @@ nnoremap <leader>z :TagbarToggle<CR>
 
 " togglebg
 map <F5> :ToggleBG<CR> 
-
-"recursively searches directory for 'tags' file
-"set tags=tags;$HOME/.vim/tags/ 
-
-"" TagList Plugin Configuration
-"let Tlist_Ctags_Cmd='/usr/bin/ctags' " point taglist to ctags
-"let Tlist_GainFocus_On_ToggleOpen = 1 " Focus on the taglist when its toggled
-"let Tlist_Close_On_Select = 1 " Close when something's selected
-"let Tlist_Use_Right_Window = 1 " Project uses the left window
-"let Tlist_File_Fold_Auto_Close = 1 " Close folds for inactive files
