@@ -111,8 +111,6 @@ au FocusLost * :wa
 au BufWinLeave * mkview
 au BufWinEnter * silent loadview
 
-Hello world!
-
 au FileType py set smartindent
 
 " Tagbar
