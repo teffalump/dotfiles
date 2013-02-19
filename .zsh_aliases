@@ -10,7 +10,7 @@ alias du='du -h'
 #alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 alias nocomment='grep -Ev '\''^(#|$)'\'''
 alias wget='wget -c'
-alias tundown='sudo ip link del'
+alias devdown='sudo ip link del'
 alias numfiles='ls -A1 | wc -l'
 
 #"nuke lamers from orbit", lol
