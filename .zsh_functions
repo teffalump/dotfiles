@@ -15,7 +15,7 @@ function current_size()
 
 #Return some numbers of pi.
 pi() {
-    local FILE="/media/sda2/Collected Media on Subjects of Interest/Science/Reference Material/pi_to_4_million_places"
+    local FILE="/extra/Collected Media on Subjects of Interest/Science/Reference Material/pi_to_4_million_places"
     local PRECISION=$(( $1 + 2 ))
     head -c "$PRECISION" "$FILE"
 }
