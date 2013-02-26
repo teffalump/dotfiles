@@ -13,4 +13,7 @@ xmodmap -e "add Control = Control_L"
 xrdb -merge /home/cz/.Xresources
         
 #open ratpoison
-exec /usr/bin/ratpoison
+#exec /usr/bin/ratpoison
+
+#start i3
+exec i3 
