@@ -1,0 +1,18 @@
+out_to_x no
+background no
+cpu_avg_samples 2
+net_avg_samples 2
+no_buffers yes
+out_to_console yes
+out_to_stderr no
+extra_newline no
+update_interval 1.0
+uppercase no
+use_spacer none
+
+TEXT
+TEMP: $acpitemp C \
+RAM: $memperc% CPU: $cpu%  \
+U: ${upspeedf wlan0} D: ${downspeedf wlan0} \
+TOP_PROC: ${top name 1} M:${top mem 1} \
+C: ${top cpu 1} ${time %a.%d.%m.%Y  %R}
