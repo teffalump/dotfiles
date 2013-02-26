@@ -15,7 +15,7 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+c exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+apostrophe kill
@@ -52,10 +52,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+d split h
+bindsym $mod+p split h
 
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+u split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen
@@ -102,7 +102,7 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
 # reload the configuration file
-bindsym $mod+Shift+j reload
+bindsym $mod+Shift+y reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
@@ -117,9 +117,9 @@ mode "resize" {
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
         bindsym h resize shrink width 10 px or 10 ppt
-        bindsym t resize grow height 10 px or 10 ppt
-        bindsym n resize shrink height 10 px or 10 ppt
-        bindsym s resize grow width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -134,14 +134,29 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
+# Start i3bar to display a workspace bar
 bar {
-        status_command i3status
+        mode hide
+        modifier Mod4
+
+        #use conky
+        status_command conky
+
+        #use i3status
+        #status_command i3status
 }
+
+# allow switch back to prev if selecting current workspace
+workspace_auto_back_and_forth yes
 
 # always open certain programs to workspaces
 # assign firefox
 assign [class="Firefox"] 2
 # assign thunderbird
 assign [class="Thunderbird"] 3
+
+
+# Quick program launches
+bindsym $mod+w exec libreoffice
+bindsym $mod+b exec firefox
+bindsym $mod+m exec thunderbird
