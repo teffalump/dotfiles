@@ -10,9 +10,18 @@ update_interval 1.0
 uppercase no
 use_spacer none
 
+#using i3bar - so need to ouput in json
 TEXT
-TEMP: $acpitemp C \
-RAM: $memperc% CPU: $cpu%  \
-U: ${upspeedf wlan0} D: ${downspeedf wlan0} \
-TOP_PROC: ${top name 1} M:${top mem 1} \
-C: ${top cpu 1} ${time %a.%d.%m.%Y  %R}
+[{"full_text": "TEMP: $acpitemp C",
+    "color": "\#00FF00"},
+{"full_text": "RAM: $memperc%",
+    "color": "\#4B0082"},
+{"full_text": "U: ${upspeedf wlan0} D: ${downspeedf wlan0}",
+    "color": "\#00FFFF"},
+{"full_text": "CPU: $cpu%",
+    "color": "\#FF0000"},
+{"full_text": "TOP- PROC: ${top name 1} C: ${top cpu 1} M: ${top mem 1}",
+    "color": "\#FF1493"},
+{"full_text": "${time %a.%d.%m.%Y  %R}",
+    "color": "\#FFFFFF"}],
+
