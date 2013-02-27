@@ -140,7 +140,7 @@ bar {
         modifier Mod4
 
         #use conky
-        status_command conky
+        status_command echo '{"version": 1}\n[\n[],' && conky
 
         #use i3status
         #status_command i3status
@@ -160,3 +160,6 @@ assign [class="Thunderbird"] 3
 bindsym $mod+w exec libreoffice
 bindsym $mod+b exec firefox
 bindsym $mod+m exec thunderbird
+
+# focus follows mouse?
+focus_follows_mouse no
