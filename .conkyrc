@@ -9,18 +9,22 @@ extra_newline no
 update_interval 1.0
 uppercase no
 use_spacer none
+top_name_width 8
 
 #using i3bar - so need to ouput in json
 TEXT
-[{"full_text": "TEMP: $acpitemp C",
+[
+{"full_text": "${execi 7 pamixer --get-volume} vol",
+    "color": "\#00FF7F"},
+{"full_text": "TEMP: $acpitemp C",
     "color": "\#00FF00"},
 {"full_text": "RAM: $memperc%",
     "color": "\#4B0082"},
-{"full_text": "U: ${upspeedf wlan0} D: ${downspeedf wlan0}",
+{"full_text": "${if_up tun0}VPN- ${endif}U: ${upspeedf wlan0} D: ${downspeedf wlan0}",
     "color": "\#00FFFF"},
 {"full_text": "CPU: $cpu%",
     "color": "\#FF0000"},
-{"full_text": "TOP- PROC: ${top name 1} C: ${top cpu 1} M: ${top mem 1}",
+{"full_text": "TOP- PROC:${top name 1} C:${top cpu 1} :::: PROC:${top_mem name 1} M:${top_mem mem 1}",
     "color": "\#FF1493"},
 {"full_text": "${time %a.%d.%m.%Y  %R}",
     "color": "\#FFFFFF"}],
