@@ -24,7 +24,7 @@ TEXT
     "color": "\#00FFFF"},
 {"full_text": "CPU: $cpu%",
     "color": "\#FF0000"},
-{"full_text": "TOP- PROC:${top name 1} C:${top cpu 1} :::: PROC:${top_mem name 1} M:${top_mem mem 1}",
+{"full_text": "${top pid 1}:${top name 1} C:${top cpu 1} :::: ${top_mem pid 1}:${top_mem name 1} M:${top_mem mem 1}",
     "color": "\#FF1493"},
 {"full_text": "${time %a.%d.%m.%Y  %R}",
     "color": "\#FFFFFF"}],
