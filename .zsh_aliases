@@ -42,6 +42,7 @@ alias pkg_search="pacman -Ss"
 alias pkg_orphans="pacman -Qdt"
 alias pkg_remove_orphans='sudo pacman -Rs $(pacman -Qtdq)'
 alias pkg_install="sudo pacman -S"
+alias pkg_foreigns="pacman -Qm"
 
 
 #listening ports
