@@ -33,13 +33,15 @@ alias restart='sudo shutdown -r now'
 alias recent='ls -toh | head -n 10'
 
 #pacman/aur aliases
-alias update="sudo pacman -Syu"
-alias full_update="yaourt -Syu --devel --aur"
-alias uninstall="sudo pacman -Rs"
-alias mirror_update="sudo reflector --verbose --sort rate -l 30 --save /etc/pacman.d/mirrorlist"
-alias pkginfo="pacman -Si"
-alias pkgorphans="pacman -Qdt"
-alias install="sudo pacman -S"
+alias pkg_update="sudo pacman -Syu"
+alias pkg_full_update="yaourt -Syu --devel --aur"
+alias pkg_uninstall="sudo pacman -Rs"
+alias pkg_mirror_update="sudo reflector --verbose --sort rate -l 30 --save /etc/pacman.d/mirrorlist"
+alias pkg_info="pacman -Si"
+alias pkg_search="pacman -Ss"
+alias pkg_orphans="pacman -Qdt"
+alias pkg_remove_orphans='sudo pacman -Rs $(pacman -Qtdq)'
+alias pkg_install="sudo pacman -S"
 
 
 #listening ports
@@ -48,8 +50,6 @@ alias ports='ss -tulan'
 #games
 alias wow="wine /games/World\ of\ Warcraft/Wow.exe -opengl"
 
-#remove orphan packages
-alias remove_orphans='sudo pacman -Rs $(pacman -Qtdq)'
 #some git aliases
 alias ga='git add'
 alias gp='git push'
