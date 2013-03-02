@@ -26,16 +26,21 @@ alias flac2ogg='find . -name "*.flac" -print0 | xargs -0 oggenc -q 10'
 alias usage="du -h --max-depth=1 | sort -rh"
 alias tusage="du -h --max-depth=1 | sort -rh | head -n 20"
 alias off="xset dpms force off"
-alias update="sudo pacman -Syu"
-alias uninstall="sudo pacman -Rs"
-alias mirror_update="sudo reflector --verbose --sort rate -l 30 --save /etc/pacman.d/mirrorlist"
-alias aur_update="yaourt -Syu --devel --aur"
 alias img_clean="exiftool -all="
-alias install="sudo pacman -S"
 alias lvim="vim -c \"normal '0\""
 alias poweroff='sudo shutdown -Ph now'
 alias restart='sudo shutdown -r now'
-alias recent='ls -toh | head -n 20'
+alias recent='ls -toh | head -n 10'
+
+#pacman/aur aliases
+alias update="sudo pacman -Syu"
+alias full_update="yaourt -Syu --devel --aur"
+alias uninstall="sudo pacman -Rs"
+alias mirror_update="sudo reflector --verbose --sort rate -l 30 --save /etc/pacman.d/mirrorlist"
+alias pkginfo="pacman -Si"
+alias pkgorphans="pacman -Qdt"
+alias install="sudo pacman -S"
+
 
 #listening ports
 alias ports='ss -tulan'
