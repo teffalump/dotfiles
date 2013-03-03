@@ -48,9 +48,6 @@ alias pkg_foreigns="pacman -Qm"
 #listening ports
 alias ports='ss -tulan'
 
-#games
-alias wow="wine /games/World\ of\ Warcraft/Wow.exe -opengl"
-
 #some git aliases
 alias ga='git add'
 alias gp='git push'
