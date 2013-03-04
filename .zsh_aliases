@@ -32,7 +32,7 @@ alias poweroff='sudo shutdown -Ph now'
 alias restart='sudo shutdown -r now'
 alias recent='ls -toh | head -n 10'
 
-alias printfind="nmap --open -p 515,631,9100"
+alias printfind="nmap -T4 --open -p 515,631,9100"
 #pacman/aur aliases
 alias pkg_update="sudo pacman -Syu"
 alias pkg_full_update="yaourt -Syu --devel --aur"
