@@ -17,3 +17,6 @@ xrdb -merge /home/cz/.Xresources
 
 #start i3
 exec i3 
+
+#use gpg-agent
+eval $(gpg-agent --daemon) &
