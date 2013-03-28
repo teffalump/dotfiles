@@ -67,6 +67,12 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+" set width to 72 when editing mail files with mutt
+au BufRead /tmp/mutt-* set tw=72
+
+" NERD Tree toggle 
+map <C-n> :NERDTreeToggle<CR>
+
 nnoremap <leader><space> :noh<cr>
 nnoremap / /\v
 vnoremap / /\v
