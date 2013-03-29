@@ -6,9 +6,9 @@ syntax on
 " define your colors
 if !exists("autocmd_colorscheme_loaded")
   let autocmd_colorscheme_loaded = 1
-  autocmd ColorScheme * highlight TodoRed      ctermbg=darkblue guibg=#002b37 ctermfg=darkred     guifg=#E01B1B
-  autocmd ColorScheme * highlight TodoOrange   ctermbg=darkblue guibg=#002b37 ctermfg=darkmagenta guifg=#E0841B
-  autocmd ColorScheme * highlight TodoYellow   ctermbg=darkblue guibg=#002b37 ctermfg=darkyellow  guifg=#E0D91B
+  autocmd ColorScheme * highlight TodoRed      ctermbg=lightblue guibg=#002b37 ctermfg=darkred     guifg=#E01B1B
+  autocmd ColorScheme * highlight TodoOrange   ctermbg=lightblue guibg=#002b37 ctermfg=darkmagenta guifg=#E0841B
+  autocmd ColorScheme * highlight TodoYellow   ctermbg=lightblue guibg=#002b37 ctermfg=darkyellow  guifg=#E0D91B
 endif
 
 " labels for colors
@@ -70,9 +70,6 @@ set statusline+=%*
 " set width to 72 when editing mail files with mutt
 au BufRead /tmp/mutt-* set tw=72
 
-" NERD Tree toggle 
-map <C-n> :NERDTreeToggle<CR>
-
 nnoremap <leader><space> :noh<cr>
 nnoremap / /\v
 vnoremap / /\v
@@ -93,6 +90,7 @@ vnoremap <F1> <ESC>
 nnoremap ; :
 
 " delimitMate
+inoremap <Leader><Tab> <C-R>=delimitMate#JumpAny("\<Leader>\<Tab>")<CR>
 
 " Vimroom
 nnoremap <silent> <Leader>mz :VimroomToggle<cr>
@@ -113,6 +111,7 @@ map <leader>e :e ~/.vimrc<cr>
 " update the system settings from my vimrc file
 map <leader>u :source ~/.vimrc<cr>
 
+" folds
 au FocusLost * :wa
 au BufWinLeave * mkview
 au BufWinEnter * silent loadview
@@ -120,9 +119,9 @@ au BufWinEnter * silent loadview
 au FileType py set smartindent
 
 " Tagbar
-autocmd VimEnter * nested :TagbarOpen 
 let g:tagbar_usearrows = 1
 nnoremap <leader>z :TagbarToggle<CR>
+nnoremap <leader>t :TagbarOpenAutoClose<CR>
 
-" togglebg
-map <F5> :ToggleBG<CR> 
+" NERD Tree toggle 
+map <C-n> :NERDTreeToggle<CR>
