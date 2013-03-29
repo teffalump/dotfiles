@@ -6,7 +6,5 @@ hardstatus alwayslastline
 hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{=kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B}%Y-%m-%d %{W}%c %{g}]'
 
 # Default screens
-#screen -t warez      0      rtorrent 
 screen -t music      0      cmus
-#screen -t canto      1      canto
-#screen -t chat       1      irssi
+screen -t mail       1      mutt
