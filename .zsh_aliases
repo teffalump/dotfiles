@@ -36,7 +36,6 @@ alias printfind="nmap -oG - -T4 --open -p 515,631,9100"
 
 #pacman/aur aliases
 alias pkg_update="sudo pacman -Syu"
-alias pkg_full_update="yaourt -Syu --devel --aur"
 alias pkg_uninstall="sudo pacman -Rs"
 alias pkg_mirror_update="sudo reflector --verbose --sort rate -l 30 --save /etc/pacman.d/mirrorlist"
 alias pkg_info="pacman -Si"
@@ -46,10 +45,14 @@ alias pkg_remove_orphans='sudo pacman -Rs $(pacman -Qtdq)'
 alias pkg_install="sudo pacman -S"
 alias pkg_foreigns="pacman -Qm"
 alias pkg_sorted_size="pkg_all_sizes | sort -rn -k 2"    #slow!
+alias pkg_needs="whoneeds"
 
 
 #listening ports
 alias ports='ss -tulan'
+
+#rip audio cd and encode to ogg
+alias ripcd='abcde -o vorbis:"-q 10"'
 
 #some git aliases
 alias ga='git add'
