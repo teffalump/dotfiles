@@ -23,6 +23,7 @@ alias star_wars='telnet towel.blinkenlights.nl'
 alias nethack_server='telnet nethack.alt.org'
 
 alias flac2ogg='find . -name "*.flac" -print0 | xargs -0 oggenc -q 10'
+alias fsize='du -h --max-depth='
 alias usage="du -h --max-depth=1 | sort -rh"
 alias tusage="du -h --max-depth=1 | sort -rh | head -n 20"
 alias off="xset dpms force off"
