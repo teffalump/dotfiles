@@ -1,17 +1,14 @@
-source! ~/.vimperatorrc.local
-:js styles.addSheet(false, "mintabwidth", "chrome://*", ".tabbrowser-tab[fadein]:not([pinned]) { min-width: 16px !important; } .scrollbutton-up, .scrollbutton-down { display:none; }");
-
-
 set pageinfo=gfm
-set runtimepath=/home/cz/.vimperator
-set maxitems=7
-set scrollbars=false
-set tabnumbers=true
-set titlestring=""
-set verbose=4
-set focuscontent=true
 set complete=tbf
 set defsearch=s
+set private
+set runtimepath=/home/cz/.vimperator
+set maxitems=7
+set noscrollbars
+set tabnumbers
+set titlestring=
+set verbose=4
+set focuscontent=true
 
 " Some javascript commands
 " Show passwords in forms -- 0 = alert box, keep masked; 1 = remove mask
