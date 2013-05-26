@@ -8,6 +8,6 @@ def get_password(account=None):
             'ris': '/home/cz/usr/mail_pwds/ris.gpg',
             'gmail-def': '/home/cz/usr/mail_pwds/gmail-def.gpg'
             }
-    command = "gpg --use-agent -dq {}".format(accounts[account])
+    command = "gpg --use-agent --batch -dq {}".format(accounts[account])
     output = subprocess.check_output(command, shell=True, stderr=subprocess.STDOUT).strip()
     return output
