@@ -9,5 +9,6 @@ def get_password(account=None):
             'gmail-def': '/home/cz/usr/mail_pwds/gmail-def.gpg'
             }
     command = "gpg --use-agent --batch -dq {}".format(accounts[account])
-    output = subprocess.check_output(command, shell=True, stderr=subprocess.STDOUT).strip()
-    return output
+    output = subprocess.check_output(command, shell=True, stderr=subprocess.STDOUT)
+    text=[ line for line in output.splitlines() if not line.startswith('gpg') ][0]
+    return text
