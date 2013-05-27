@@ -91,14 +91,6 @@ unset markers              # no ugly plus signs
 set quote_regexp = "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
 alternative_order text/plain text/enriched text/html
 
-# Switch from-addresses
-macro generic "<esc>1" ":set from=timelessmomentum@gmail.com"
-macro generic "<esc>2" ":set from=cr.sn.zn@gmail.com"
-macro generic "<esc>3" ":set from=tef@riseup.net"
-macro generic "<esc>4" ":set from=siv@riseup.net"
-macro generic "<esc>5" ":set from=vis@riseup.net"
-macro generic "<esc>6" ":set from=teffalump@riseup.net"
-
 # Notmuch bindings
 macro index S "<enter-command>unset wait_key<enter><shell-escape>notmuch-mutt -r --prompt search<enter><change-folder-readonly>~/.cache/notmuch/mutt/results<enter>" "notmuch: search mail"
 macro index <F9> "<enter-command>unset wait_key<enter><pipe-message>notmuch-mutt -r thread<enter><change-folder-readonly>~/.cache/notmuch/mutt/results<enter><enter-command>set wait_key<enter>" "notmuch: reconstruct thread"
