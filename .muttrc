@@ -35,6 +35,7 @@ source $alias_file
 # Status bar
 set status_chars        = " *%A"
 set status_format       = "───[ Folder: %f ]───[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─%?p?( %p postponed )?───""
+
 # Sidebar Patch
 set sidebar_delim   = '  │'
 set sidebar_visible = yes
