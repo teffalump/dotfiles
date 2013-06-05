@@ -62,7 +62,7 @@ PROMPT=$'\n%{$fg[red]%}%(0?..!!)%{$fg[yellow]%}[!] %{$fg[green]%}%n@%m %{$fg[whi
 #zsh named dirs
 music=/extra/Music
 writing=~/Writing
-books=/extra/Books
+books=~/Books
 torrents=~/Downloads/torrents
 downloads=~/Downloads/
 science=/extra/Collected\ Media\ on\ Subjects\ of\ Interest/Science
