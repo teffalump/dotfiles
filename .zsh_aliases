@@ -45,7 +45,7 @@ alias pkg_orphans="pacman -Qdt"
 alias pkg_remove_orphans='sudo pacman -Rs $(pacman -Qtdq)'
 alias pkg_install="sudo pacman -S"
 alias pkg_foreigns="pacman -Qm"
-alias pkg_sorted_size="pkg_all_sizes | sort -rn -k 2"    #slow!
+alias pkg_sorted_size="pkg_size | sort -rn -k 2"    #slow! needs pkg_size script
 alias pkg_needs="whoneeds"
 
 
