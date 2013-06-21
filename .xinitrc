@@ -15,8 +15,8 @@ xrdb -merge /home/cz/.Xresources
 #open ratpoison
 #exec /usr/bin/ratpoison
 
-#start i3
-exec i3 
-
 #use gpg-agent
 eval $(gpg-agent --enable-ssh-support --daemon) &
+
+#start i3
+exec i3 
