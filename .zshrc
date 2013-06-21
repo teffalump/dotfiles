@@ -74,3 +74,5 @@ if [ -f "${HOME}/.gpg-agent-info" ]; then
   export SSH_AUTH_SOCK
   export SSH_AGENT_PID
 fi
+
+#gpg-connect-agent updatestartuptty /bye
