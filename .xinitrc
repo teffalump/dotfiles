@@ -19,4 +19,4 @@ xrdb -merge /home/cz/.Xresources
 exec i3 
 
 #use gpg-agent
-eval $(gpg-agent --daemon) &
+eval $(gpg-agent --enable-ssh-support --daemon) &
