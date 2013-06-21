@@ -11,9 +11,6 @@ xmodmap -e "add Control = Control_L"
 
 #source x config
 xrdb -merge /home/cz/.Xresources
-        
-#open ratpoison
-#exec /usr/bin/ratpoison
 
 #use gpg-agent
 eval $(gpg-agent --enable-ssh-support --daemon) &
