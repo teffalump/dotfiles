@@ -75,4 +75,5 @@ if [ -f "${HOME}/.gpg-agent-info" ]; then
   export SSH_AGENT_PID
 fi
 
-#gpg-connect-agent updatestartuptty /bye
+#update display to wherever terminal is
+gpg-connect-agent updatestartuptty /bye > /dev/null
