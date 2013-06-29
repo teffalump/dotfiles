@@ -68,12 +68,13 @@ downloads=~/Downloads/
 science=/extra/Collected\ Media\ on\ Subjects\ of\ Interest/Science
 : ~writing ~books ~music ~downloads ~torrents ~science
 
-if [ -f "${HOME}/.gpg-agent-info" ]; then
-  . "${HOME}/.gpg-agent-info"
+# GPG stuff
+if [[ -r ~/.gpg-agent-info ]]; then
+  . ~/.gpg-agent-info
   export GPG_AGENT_INFO
   export SSH_AUTH_SOCK
   export SSH_AGENT_PID
 fi
 
-#update display to wherever terminal is
+#update display to wherever terminal is and suppress output
 gpg-connect-agent updatestartuptty /bye &> /dev/null
