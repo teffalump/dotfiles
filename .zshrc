@@ -76,4 +76,4 @@ if [ -f "${HOME}/.gpg-agent-info" ]; then
 fi
 
 #update display to wherever terminal is
-gpg-connect-agent updatestartuptty /bye > /dev/null
+gpg-connect-agent updatestartuptty /bye &> /dev/null
