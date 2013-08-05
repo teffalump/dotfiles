@@ -44,6 +44,7 @@ alias pkg-search="pacman -Ss"
 alias pkg-orphans="pacman -Qdt"
 alias pkg-remove-orphans='sudo pacman -Rs $(pacman -Qtdq)'
 alias pkg-install="sudo pacman -S"
+alias pkg-files="pacman -Ql"
 alias pkg-foreigns="pacman -Qmq"
 alias pkg-locals="pacman -Qeq"
 alias pkg-officials="comm -23 <(pacman -Qeq|sort) <(pacman -Qmq|sort)"
