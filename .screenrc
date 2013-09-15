@@ -7,4 +7,5 @@ hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{=kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)
 
 # Default screens
 screen -t music      0      cmus
-screen -t mail       1      mutt
+screen -t chat       1      weechat-curses
+screen -t mail       2      mutt
