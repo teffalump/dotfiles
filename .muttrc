@@ -3,7 +3,7 @@ source "gpg --use-agent --batch -dq ~/usr/mail_pwds/prime.gpg |"
 
 # Paths
 set sendmail        = /usr/bin/msmtp
-set alias_file      = ~/.mutt/alias
+#set alias_file      = ~/.mutt/alias
 set header_cache    = ~/.mutt/cache/headers
 set message_cachedir= ~/.mutt/cache/bodies
 set certificate_file= ~/.mutt/certificate_file
@@ -21,8 +21,8 @@ set wait_key            = no
 set mbox_type           = Maildir
 set timeout             = 3
 set mail_check          = 0
-set sort_alias          = alias
-set reverse_alias       = yes
+#set sort_alias          = alias
+#set reverse_alias       = yes
 set pipe_decode
 set thorough_search
 set imap_check_subscribed
@@ -30,7 +30,7 @@ set delete
 set quit
 unset confirmappend
 unset mark_old
-source $alias_file
+#source $alias_file
 
 # Status bar
 set status_chars        = " *%A"
@@ -96,6 +96,11 @@ alternative_order text/plain text/enriched text/html
 macro index S "<enter-command>unset wait_key<enter><shell-escape>notmuch-mutt -r --prompt search<enter><change-folder-readonly>~/.cache/notmuch/mutt/results<enter>" "notmuch: search mail"
 macro index <F9> "<enter-command>unset wait_key<enter><pipe-message>notmuch-mutt -r thread<enter><change-folder-readonly>~/.cache/notmuch/mutt/results<enter><enter-command>set wait_key<enter>" "notmuch: reconstruct thread"
 macro index <F6> "<enter-command>unset wait_key<enter><pipe-message>notmuch-mutt tag -- -inbox<enter>" "notmuch: remove message from inbox"
+
+# Abook (contact management)
+set query_command = "abook --mutt-query '%s'"
+macro index,pager  a "<pipe-message>abook --add-email-quiet<return>" "Add this sender to Abook"
+bind editor        <Tab> complete-query
 
 # Use urlview
 macro pager \cu <pipe-entry>'urlview'<enter> 'Follow links with urlview'
