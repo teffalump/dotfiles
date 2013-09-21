@@ -1,5 +1,5 @@
 # Prime the gpg keychain
-source "gpg --use-agent --batch -dq ~/usr/mail_pwds/prime.gpg |"
+#source "gpg --use-agent --batch -dq ~/usr/mail_pwds/prime.gpg |"
 
 # Paths
 set sendmail        = /usr/bin/msmtp
@@ -123,11 +123,12 @@ bind index,pager  previous-line
 # Settings for GPG
 source ~/.mutt/gpg.rc
 
+# Account Settings
 # Determine settings according to email from address
 # Gmail account
-source ~/.mutt/gmail
-folder-hook $folder 'source ~/.mutt/gmail'
+#source ~/.mutt/gmail
+#folder-hook $folder 'source ~/.mutt/gmail'
 
 # Ris account
 source ~/.mutt/ris
-folder-hook $folder 'source ~/.mutt/ris'
+#folder-hook $folder 'source ~/.mutt/ris'
