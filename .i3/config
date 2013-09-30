@@ -150,12 +150,15 @@ bar {
         #status_command i3status
 }
 
+# auto-start apps
+exec --no-startup-id pulseaudio --start
+
 # allow switch back to prev if selecting current workspace
 workspace_auto_back_and_forth yes
 
 # always open certain programs to workspaces
 assign [class="Firefox"] 2
-assign [class="Thunderbird"] 3
+#assign [class="Thunderbird"] 3
 assign [class="libreoffice*"] 4
 assign [class="Qbittorrent"] 5
 
