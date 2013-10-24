@@ -6,9 +6,10 @@ syntax on
 " define your colors
 if !exists("autocmd_colorscheme_loaded")
   let autocmd_colorscheme_loaded = 1
-  autocmd ColorScheme * highlight TodoRed      ctermbg=lightblue guibg=#002b37 ctermfg=darkred     guifg=#E01B1B
-  autocmd ColorScheme * highlight TodoOrange   ctermbg=lightblue guibg=#002b37 ctermfg=darkmagenta guifg=#E0841B
-  autocmd ColorScheme * highlight TodoYellow   ctermbg=lightblue guibg=#002b37 ctermfg=darkyellow  guifg=#E0D91B
+  autocmd ColorScheme * highlight TodoRed      ctermbg=14 guibg=#002b37 ctermfg=1    guifg=#E01B1B
+  autocmd ColorScheme * highlight TodoOrange   ctermbg=14 guibg=#002b37 ctermfg=5    guifg=#E0841B
+  autocmd ColorScheme * highlight TodoYellow   ctermbg=14 guibg=#002b37 ctermfg=130  guifg=#E0D91B
+  autocmd ColorScheme * highlight Loud         ctermbg=9  guibg=#002b37 ctermfg=10   guifg=#E01B1B
 endif
 
 " labels for colors
@@ -16,7 +17,8 @@ if has("autocmd")
     if v:version > 701
         autocmd Syntax * call matchadd('TodoRed',  '\W\zs\(FIX\)')
         autocmd Syntax * call matchadd('TodoOrange', '\W\zs\(TODO\)')
-        autocmd Syntax * call matchadd('ToDoYellow', '\W\zs\(DEBUG\)')
+        autocmd Syntax * call matchadd('TodoYellow', '\W\zs\(DEBUG\)')
+        autocmd Syntax * call matchadd('Loud',  '\W\zs\(RISK\)')
     endif
 endif
 
@@ -68,7 +70,7 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 " set width to 72 when editing mail files with mutt
-au BufRead /tmp/mutt-* set tw=72
+"au BufRead /tmp/mutt-* set tw=72
 
 nnoremap <leader><space> :noh<cr>
 nnoremap / /\v
