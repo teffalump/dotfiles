@@ -70,7 +70,7 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 " set width to 72 when editing mail files with mutt
-"au BufRead /tmp/mutt-* set tw=72
+au BufRead ~/.mutt/temp/mutt-* set tw=72
 
 nnoremap <leader><space> :noh<cr>
 nnoremap / /\v
