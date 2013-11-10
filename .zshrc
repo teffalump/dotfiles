@@ -2,6 +2,7 @@ HISTFILE=~/.histfile
 HISTSIZE=2000
 SAVEHIST=10000
 DIRSTACKSIZE=20
+DIRSTACKFILE=~/.zsh/zdirs
 
 setopt nobeep
 setopt autocd
@@ -75,6 +76,16 @@ fi
 if [[ -r ~/.zsh_functions ]]; then
     . ~/.zsh_functions
 fi
+
+#persistent DIRSTACK across sessions
+if [[ -f $DIRSTACKFILE ]] && [[ $#dirstack -eq 0 ]]; then
+  dirstack=( ${(f)"$(< $DIRSTACKFILE)"} )
+  [[ -d $dirstack[1] ]] && cd $dirstack[1] && cd $OLDPWD
+fi
+#hook function
+chpwd() {
+  print -l $PWD ${(u)dirstack} >$DIRSTACKFILE
+}
 
 #prompt
 #left prompt
