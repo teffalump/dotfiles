@@ -158,14 +158,14 @@ workspace_auto_back_and_forth yes
 
 # always open certain programs to workspaces
 assign [class="Firefox"] 2
-#assign [class="Thunderbird"] 3
+assign [class="Dwb"] 2
 assign [class="libreoffice*"] 4
 assign [class="Qbittorrent"] 5
 
 
 # Quick program launches
 bindsym $mod+w exec libreoffice
-bindsym $mod+b exec firefox
+bindsym $mod+b exec dwb
 
 # focus follows mouse?
 focus_follows_mouse no
