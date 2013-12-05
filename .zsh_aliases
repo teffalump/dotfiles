@@ -1,5 +1,5 @@
 alias v='vim'
-alias sv='sudo vim'
+alias sv='sudo -e'
 alias back='cd -'
 alias ls='ls -1 --color=auto'
 alias cp='cp --preserve'

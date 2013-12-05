@@ -111,5 +111,8 @@ if [[ -r ~/.gpg-agent-info ]]; then
   export SSH_AGENT_PID
 fi
 
+# Editing files with sudo (use restricted vim)
+export SUDO_EDITOR=rvim
+
 #update display to wherever terminal is and suppress output
 gpg-connect-agent updatestartuptty /bye &> /dev/null
