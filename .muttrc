@@ -124,11 +124,4 @@ bind index,pager  previous-line
 source ~/.mutt/gpg.rc
 
 # Account Settings
-# Determine settings according to email from address
-# Gmail account
-#source ~/.mutt/gmail
-#folder-hook $folder 'source ~/.mutt/gmail'
-
-# Ris account
 source ~/.mutt/ris
-#folder-hook $folder 'source ~/.mutt/ris'
