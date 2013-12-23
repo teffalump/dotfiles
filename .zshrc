@@ -48,7 +48,7 @@ zstyle ':completion:*:kill:*'   force-list always
 #remove trailing slash
 zstyle ':completion:*' squeeze-slashes true
 
-zstyle :compinstall filename '/home/cz/.zshrc'
+zstyle :compinstall filename '~/.zshrc'
 
 autoload -Uz compinit zcalc
 compinit
@@ -95,13 +95,11 @@ PROMPT=$'\n%{$fg[red]%}%(0?..!!)%{$fg[yellow]%}[!] %{$fg[green]%}%n@%m %{$fg[whi
 #RPROMPT=' '
 
 #zsh named dirs
-music=/extra/Music
 writing=~/Writing
 books=~/Books
 torrents=~/Downloads/torrents
 downloads=~/Downloads/
-media=/extra/Collected\ Media\ on\ Subjects\ of\ Interest
-: ~writing ~books ~music ~downloads ~torrents ~media
+: ~writing ~books ~downloads ~torrents
 
 # GPG stuff
 if [[ -r ~/.gpg-agent-info ]]; then

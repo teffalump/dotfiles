@@ -13,13 +13,6 @@ function current_size()
         echo -n $ref
     }
 
-#Return some numbers of pi.
-pi() {
-    local FILE="/extra/Collected Media on Subjects of Interest/Science/Reference Material/pi_to_4_million_places"
-    local PRECISION=$(( $1 + 2 ))
-    head -c "$PRECISION" "$FILE"
-}
-
 # down somesubdir
 #
 # Find a directory below this that matches the word provided
