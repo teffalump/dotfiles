@@ -3,7 +3,6 @@ source "gpg --use-agent -dq ~/usr/mail_pwds/prime.gpg |"
 
 # Paths
 set sendmail        = /usr/bin/msmtp
-#set alias_file      = ~/.mutt/alias
 set header_cache    = ~/.mutt/cache/headers
 set message_cachedir= ~/.mutt/cache/bodies
 set certificate_file= ~/.mutt/certificate_file
@@ -21,8 +20,6 @@ set wait_key            = no
 set mbox_type           = Maildir
 set timeout             = 3
 set mail_check          = 0
-#set sort_alias          = alias
-#set reverse_alias       = yes
 set pipe_decode
 set thorough_search
 set imap_check_subscribed

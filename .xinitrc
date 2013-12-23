@@ -10,7 +10,7 @@ xmodmap -e "clear Lock"
 xmodmap -e "add Control = Control_L"
 
 #source x config
-xrdb -merge /home/cz/.Xresources
+xrdb -merge ~/.Xresources
 
 #use gpg-agent
 #eval $(gpg-agent --daemon) &

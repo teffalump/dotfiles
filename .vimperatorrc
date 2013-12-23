@@ -2,7 +2,7 @@ set pageinfo=gfm
 set complete=tbf
 set defsearch=s
 set private
-set runtimepath=/home/cz/.vimperator
+set runtimepath=~/.vimperator
 set maxitems=7
 set noscrollbars
 set tabnumbers

@@ -4,10 +4,10 @@ import re, subprocess
 
 def get_password(account=None):
     accounts = {
-            'gmail-work': '/home/cz/usr/mail_pwds/gmail-work.gpg',
-            'ris': '/home/cz/usr/mail_pwds/ris.gpg',
-            'gmail-def': '/home/cz/usr/mail_pwds/gmail-def.gpg',
-            'gmail-anon': '/home/cz/usr/mail_pwds/gmail-anon.gpg'
+            'gmail-work': '~/usr/mail_pwds/gmail-work.gpg',
+            'ris': '~/usr/mail_pwds/ris.gpg',
+            'gmail-def': '~/usr/mail_pwds/gmail-def.gpg',
+            'gmail-anon': '~/usr/mail_pwds/gmail-anon.gpg'
             }
     command = "gpg --use-agent -dq {}".format(accounts[account])
     output = subprocess.check_output(command, shell=True, stderr=subprocess.STDOUT)
