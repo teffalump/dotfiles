@@ -2,6 +2,9 @@
 
 set $mod Mod1
 
+# Hide window title bars in splits
+new_window 1pixel
+
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
 font pango:inconsolata bold
