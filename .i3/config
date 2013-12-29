@@ -144,7 +144,7 @@ bar {
         font pango:Consolas Bold 11
 
         #use conky
-        status_command echo '{"version": 1}\n[\n[],' && conky
+        status_command echo '{"version":1}[[],' && conky
 
         #use i3status
         #status_command i3status
