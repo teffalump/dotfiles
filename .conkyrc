@@ -10,6 +10,7 @@ update_interval 1.0
 uppercase no
 use_spacer none
 top_name_width 8
+if_up_strictness address
 
 #using i3bar - so need to ouput in json
 TEXT
