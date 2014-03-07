@@ -67,6 +67,7 @@ set autochdir
 set statusline=%F%m%r%h%w\ [TYPE=%Y\ %{&ff}]\ %=%c.%l/%L\ (%p%%)
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%{fugitive#statusline()}
 set statusline+=%*
 
 " set width to 72 when editing mail files with mutt
