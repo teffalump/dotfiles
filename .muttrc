@@ -99,8 +99,13 @@ set query_command = "abook --mutt-query '%s'"
 macro index,pager  a "<pipe-message>abook --add-email-quiet<return>" "Add this sender to Abook"
 bind editor        <Tab> complete-query
 
-# Use urlview
-macro pager \cu <pipe-entry>'urlview'<enter> 'Follow links with urlview'
+# Extract URLs
+macro index,pager \cb "<enter-command> set my_pdsave=\$pipe_decode<enter>\
+        <enter-command> unset pipe_decode<enter>\
+        <pipe-message>extract_url.pl<enter>\
+        <enter-command> set pipe_decode=\$my_pdsave<enter>" "get URLs"
+
+#macro pager \cu <pipe-entry>'urlview'<enter> 'Follow links with urlview'
 
 # HTML email (eww)
 auto_view text/html
