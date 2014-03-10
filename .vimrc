@@ -92,6 +92,9 @@ nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 nnoremap ; :
 
+" Save those pesky RO files
+cnoremap sudow w !sudo tee % >/dev/null
+
 " delimitMate
 inoremap <Leader><Tab> <C-R>=delimitMate#JumpAny("\<Leader>\<Tab>")<CR>
 
