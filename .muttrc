@@ -100,12 +100,10 @@ macro index,pager  a "<pipe-message>abook --add-email-quiet<return>" "Add this s
 bind editor        <Tab> complete-query
 
 # Extract URLs
-macro index,pager \cb "<enter-command> set my_pdsave=\$pipe_decode<enter>\
+macro index,pager \cu "<enter-command> set my_pdsave=\$pipe_decode<enter>\
         <enter-command> unset pipe_decode<enter>\
         <pipe-message>extract_url<enter>\
         <enter-command> set pipe_decode=\$my_pdsave<enter>" "get URLs"
-
-#macro pager \cu <pipe-entry>'urlview'<enter> 'Follow links with urlview'
 
 # HTML email (eww)
 auto_view text/html
