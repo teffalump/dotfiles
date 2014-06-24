@@ -16,7 +16,7 @@ alias most_used="cut -f1 -d' ' ${HISTFILE} | sort | uniq -c | sort -rn | head"
 alias bt="wget http://cachefly.cachefly.net/100mb.test"
 
 #"nuke lamers from orbit", lol
-alias banish="varnishncsa -d | grep \/ip | grep -i wget | awk ‘{ print $1 }’ | sort | uniq | tee -a /etc/hosts.deny"
+alias banish="varnishncsa -d | grep \/ip | grep -i wget | awk ‘{ print $1 }’ | sort -u | tee -a /etc/hosts.deny"
 
 #telnet server that broadcasts Star Wars Episode IV as animated text
 alias star-wars='telnet towel.blinkenlights.nl' 
