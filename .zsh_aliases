@@ -14,7 +14,7 @@ alias devdown='sudo ip link del'
 alias numfiles='find -maxdepth 1 -type f | wc -l'
 
 #"nuke lamers from orbit", lol
-alias banish="varnishncsa -d | grep \/ip | grep -i wget | awk ‘{ print $1 }’ | sort | uniq | tee -a /etc/hosts.deny"
+alias banish="varnishncsa -d | grep \/ip | grep -i wget | awk ‘{ print $1 }’ | sort -u | tee -a /etc/hosts.deny"
 
 #telnet server that broadcasts Star Wars Episode IV as animated text
 alias star-wars='telnet towel.blinkenlights.nl' 
