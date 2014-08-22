@@ -102,15 +102,15 @@ downloads=~/Downloads/
 : ~writing ~books ~downloads ~torrents
 
 # GPG stuff
-if [[ -r ~/.gpg-agent-info ]]; then
-  . ~/.gpg-agent-info
-  export GPG_AGENT_INFO
-  export SSH_AUTH_SOCK
-  export SSH_AGENT_PID
-fi
+#if [[ -r ~/.gpg-agent-info ]]; then
+  #. ~/.gpg-agent-info
+  #export GPG_AGENT_INFO
+  #export SSH_AUTH_SOCK
+  #export SSH_AGENT_PID
+#fi
 
 # Editing files with sudo (use restricted vim)
 export SUDO_EDITOR=rvim
 
 #update display to wherever terminal is and suppress output
-gpg-connect-agent updatestartuptty /bye &> /dev/null
+#gpg-connect-agent updatestartuptty /bye &> /dev/null

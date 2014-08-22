@@ -16,7 +16,7 @@ xrdb -merge ~/.Xresources
 #eval $(gpg-agent --daemon) &
 
 #connect to display
-gpg-connect-agent updatestartuptty /bye
+#gpg-connect-agent updatestartuptty /bye
 
 #start i3
 exec i3 
