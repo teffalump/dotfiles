@@ -1,5 +1,5 @@
 # Prime the gpg keychain
-source "gpg --use-agent -dq ~/usr/mail_pwds/prime.gpg |"
+#source "gpg --use-agent -dq ~/usr/mail_pwds/prime.gpg |"
 
 # Paths
 set sendmail        = /usr/bin/msmtp
