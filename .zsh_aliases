@@ -38,7 +38,7 @@ alias printfind="nmap -oG - -T4 --open -p 515,631,9100"
 #pacman/aur aliases
 alias pkg-update="sudo pacman -Syu"
 alias pkg-uninstall="sudo pacman -Rs"
-alias pkg-mirror-update="sudo reflector --verbose --sort rate -l 30 --save /etc/pacman.d/mirrorlist"
+alias pkg-mirror-update="sudo reflector --verbose --sort score -l 30 -p http --save /etc/pacman.d/mirrorlist"
 alias pkg-info="pacman -Si"
 alias pkg-search="pacman -Ss"
 alias pkg-orphans="pacman -Qdt"
