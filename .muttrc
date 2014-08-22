@@ -37,7 +37,7 @@ set status_format       = "───[ Folder: %f ]───[%r%m messages%?n? (%
 set sidebar_delim   = '  │'
 set sidebar_visible = yes
 set sidebar_width   = 30
-set sidebar_shortpath = yes
+set sidebar_indentstr = '-'
 set sidebar_sort = yes
 source              ~/.mutt/mailboxes
 source              ~/.mutt/colors
@@ -99,8 +99,11 @@ set query_command = "abook --mutt-query '%s'"
 macro index,pager  a "<pipe-message>abook --add-email-quiet<return>" "Add this sender to Abook"
 bind editor        <Tab> complete-query
 
-# Use urlview
-macro pager \cu <pipe-entry>'urlview'<enter> 'Follow links with urlview'
+# Extract URLs
+macro index,pager \cu "<enter-command> set my_pdsave=\$pipe_decode<enter>\
+        <enter-command> unset pipe_decode<enter>\
+        <pipe-message>extract_url<enter>\
+        <enter-command> set pipe_decode=\$my_pdsave<enter>" "get URLs"
 
 # HTML email (eww)
 auto_view text/html

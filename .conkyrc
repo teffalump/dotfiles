@@ -21,7 +21,7 @@ TEXT
     "color": "\#00FFFF"},
 {"full_text": "/:${fs_free /} ~:${fs_free /home}",
     "color": "\#FF3400"},
-{"full_text": "${execi 7 pamixer --get-volume} vol",
+{"full_text": "${execi 7 ponymix get-volume} vol",
     "color": "\#00FF7F"},
 {"full_text": "TEMP: $acpitemp C",
     "color": "\#00FF00"},

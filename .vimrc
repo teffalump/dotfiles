@@ -67,6 +67,7 @@ set autochdir
 set statusline=%F%m%r%h%w\ [TYPE=%Y\ %{&ff}]\ %=%c.%l/%L\ (%p%%)
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%{fugitive#statusline()}
 set statusline+=%*
 
 " set width to 72 when editing mail files with mutt
@@ -90,6 +91,9 @@ inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 nnoremap ; :
+
+" Save those pesky RO files
+cnoremap sudow w !sudo tee % >/dev/null
 
 " delimitMate
 inoremap <Leader><Tab> <C-R>=delimitMate#JumpAny("\<Leader>\<Tab>")<CR>

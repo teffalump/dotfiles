@@ -50,6 +50,8 @@ alias pkg-locals="pacman -Qeq"
 alias pkg-officials="comm -23 <(pacman -Qeq|sort) <(pacman -Qmq|sort)"
 alias pkg-local-sorted-size="comm -23 <(pacman -Qeq|sort) <(pacman -Qmq|sort)| xargs pkg-size | sort -rn -k 2"    #needs pkg-size script
 alias pkg-needs="whoneeds"
+alias pkg-new-updates="checkupdates"
+alias pkg-update-keys='sudo pacman-key --refresh-keys && sudo pacman-key --populate'
 
 
 #listening ports
