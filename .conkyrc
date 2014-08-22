@@ -10,13 +10,14 @@ update_interval 1.0
 uppercase no
 use_spacer none
 top_name_width 8
+if_up_strictness address
 
 #using i3bar - so need to ouput in json
 TEXT
 [
 {"full_text": "${top pid 1}:${top name 1} C:${top cpu 1} :::: ${top_mem pid 1}:${top_mem name 1} M:${top_mem mem 1}",
     "color": "\#FF1493"},
-{"full_text": "${if_up tun0}VPN${endif}${if_up wlan0}/W- U: ${upspeedf wlan0} D: ${downspeedf wlan0}${else}/E- U: ${upspeedf eth0} D: ${downspeedf eth0}${endif}",
+{"full_text": "${if_up tun0}VPN${endif}${if_up wlp4s0}/W- U: ${upspeedf wlp4s0} D: ${downspeedf wlp4s0}${else}/E- U: ${upspeedf enp2s0} D: ${downspeedf enp2s0}${endif}",
     "color": "\#00FFFF"},
 {"full_text": "/:${fs_free /} ~:${fs_free /home}",
     "color": "\#FF3400"},
