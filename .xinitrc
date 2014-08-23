@@ -12,11 +12,5 @@ xmodmap -e "add Control = Control_L"
 #source x config
 xrdb -merge ~/.Xresources
 
-#use gpg-agent
-#eval $(gpg-agent --daemon) &
-
-#connect to display
-#gpg-connect-agent updatestartuptty /bye
-
 #start i3
 exec i3 
