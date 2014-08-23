@@ -108,5 +108,6 @@ fi
 if [[ -r ~/.keychain/$HOST-sh-gpg ]]; then
   . ~/.keychain/$HOST-sh-gpg
 fi
+
 # Editing files with sudo (use restricted vim)
 export SUDO_EDITOR=rvim
