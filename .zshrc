@@ -102,9 +102,6 @@ downloads=~/Downloads/
 : ~writing ~books ~downloads ~torrents
 
 # GPG/SSH stuff
-if [[ -r ~/.keychain/$HOST-sh ]]; then
-  . ~/.keychain/$HOST-sh
-fi
 if [[ -r ~/.keychain/$HOST-sh-gpg ]]; then
   . ~/.keychain/$HOST-sh-gpg
 fi
