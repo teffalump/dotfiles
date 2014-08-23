@@ -101,13 +101,12 @@ torrents=~/Downloads/torrents
 downloads=~/Downloads/
 : ~writing ~books ~downloads ~torrents
 
-# GPG stuff
-#if [[ -r ~/.gpg-agent-info ]]; then
-  #. ~/.gpg-agent-info
-  #export GPG_AGENT_INFO
-  #export SSH_AUTH_SOCK
-  #export SSH_AGENT_PID
-#fi
-
+# GPG/SSH stuff
+if [[ -r ~/.keychain/$HOST-sh ]]; then
+  . ~/.keychain/$HOST-sh
+fi
+if [[ -r ~/.keychain/$HOST-sh-gpg ]]; then
+  . ~/.keychain/$HOST-sh-gpg
+fi
 # Editing files with sudo (use restricted vim)
 export SUDO_EDITOR=rvim
