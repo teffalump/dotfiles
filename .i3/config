@@ -144,6 +144,7 @@ bar {
         tray_output primary
         mode hide
         modifier Mod4
+        font pango:inconsolata bold 8
 
         #use conky
         status_command echo '{"version":1}[[],' && conky

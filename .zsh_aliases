@@ -54,6 +54,7 @@ alias pkg-installed-sizes="comm -23 <(pacman -Qeq|sort) <(pacman -Qmq|sort)| xar
 alias pkg-needs="whoneeds"
 alias pkg-new-updates="checkupdates"
 alias pkg-update-keys='sudo pacman-key --refresh-keys && sudo pacman-key --populate'
+alias pkg-dump="comm -23 <(pacman -Qeq|sort) <(pacman -Qmq|sort) > ${HOME}/usr/pkglist"
 
 
 #listening ports
