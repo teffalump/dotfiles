@@ -11,10 +11,12 @@ alias du='du -h'
 alias nocomment='grep -Ev '\''^(#|$)'\'''
 alias wget='wget -c'
 alias devdown='sudo ip link del'
-alias numfiles='ls -A1 | wc -l'
+alias numfiles='find -maxdepth 1 -type f | wc -l'
+alias most_used="cut -f1 -d' ' ${HISTFILE} | sort | uniq -c | sort -rn | head"
+alias bt="wget http://cachefly.cachefly.net/100mb.test"
 
 #"nuke lamers from orbit", lol
-alias banish="varnishncsa -d | grep \/ip | grep -i wget | awk ‘{ print $1 }’ | sort | uniq | tee -a /etc/hosts.deny"
+alias banish="varnishncsa -d | grep \/ip | grep -i wget | awk ‘{ print $1 }’ | sort -u | tee -a /etc/hosts.deny"
 
 #telnet server that broadcasts Star Wars Episode IV as animated text
 alias star-wars='telnet towel.blinkenlights.nl' 
@@ -45,13 +47,15 @@ alias pkg-orphans="pacman -Qdt"
 alias pkg-remove-orphans='sudo pacman -Rs $(pacman -Qtdq)'
 alias pkg-install="sudo pacman -S"
 alias pkg-files="pacman -Ql"
-alias pkg-foreigns="pacman -Qmq"
-alias pkg-locals="pacman -Qeq"
-alias pkg-officials="comm -23 <(pacman -Qeq|sort) <(pacman -Qmq|sort)"
-alias pkg-local-sorted-size="comm -23 <(pacman -Qeq|sort) <(pacman -Qmq|sort)| xargs pkg-size | sort -rn -k 2"    #needs pkg-size script
+alias pkg-installed-foreigns="pacman -Qmq"
+alias pkg-installed-officials="comm -23 <(pacman -Qeq|sort) <(pacman -Qmq|sort)"
+alias pkg-installed="pacman -Qeq"
+alias pkg-installed-sizes="comm -23 <(pacman -Qeq|sort) <(pacman -Qmq|sort)| xargs pkg-size | sort -rn -k 2"    #needs pkg-size script
 alias pkg-needs="whoneeds"
 alias pkg-new-updates="checkupdates"
 alias pkg-update-keys='sudo pacman-key --refresh-keys && sudo pacman-key --populate'
+alias pkg-dump="comm -23 <(pacman -Qeq|sort) <(pacman -Qmq|sort) > ${HOME}/usr/pkglist"
+alias pkg-owns="pacman -Qo"
 
 
 #listening ports

@@ -89,7 +89,7 @@ chpwd() {
 
 #prompt
 #left prompt
-PROMPT=$'\n%{$fg[red]%}%(0?..!!)%{$fg[yellow]%}[!] %{$fg[green]%}%n@%m %{$fg[white]%}%j %{$fg[blue]%}$(current_branch) %{$fg[cyan]%}%~\n%{$fg[green]%}%(!.#.$) '
+PROMPT=$'\n%{$fg[red]%}%(0?..!!)%{$fg[yellow]%}[!] %{$fg[green]%}%n@%m %{$fg[blue]%}$(current_branch) %{$fg[cyan]%}%~\n%{$fg[green]%}%(!.#.$) '
 
 #right prompt
 #RPROMPT=' '
@@ -101,16 +101,10 @@ torrents=~/Downloads/torrents
 downloads=~/Downloads/
 : ~writing ~books ~downloads ~torrents
 
-# GPG stuff
-if [[ -r ~/.gpg-agent-info ]]; then
-  . ~/.gpg-agent-info
-  export GPG_AGENT_INFO
-  export SSH_AUTH_SOCK
-  export SSH_AGENT_PID
+# GPG/SSH stuff
+if [[ -r ~/.keychain/$HOST-sh-gpg ]]; then
+  . ~/.keychain/$HOST-sh-gpg
 fi
 
 # Editing files with sudo (use restricted vim)
 export SUDO_EDITOR=rvim
-
-#update display to wherever terminal is and suppress output
-gpg-connect-agent updatestartuptty /bye &> /dev/null
