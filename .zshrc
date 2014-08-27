@@ -36,7 +36,7 @@ zstyle ':completion:*' cache-path ~/.zsh/cache
 #match approximate and mistyped
 zstyle ':completion:*' completer _complete _match _approximate
 zstyle ':completion:*:match:*' original only
-zstyle ':completion:*:approximate:*' max-errors 1 numeric
+zstyle ':completion:*:approximate:*' max-errors 2 numeric
 
 #ignore completion functions for uninstalled commands
 zstyle ':completion:*:functions' ignored-patterns '_*'
