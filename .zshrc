@@ -48,6 +48,26 @@ zstyle ':completion:*:kill:*'   force-list always
 #remove trailing slash
 zstyle ':completion:*' squeeze-slashes true
 
+#verbose matches
+zstyle ':completion:*' verbose yes
+
+#better manual support
+zstyle ':completion:*:manuals' seperate-sections true
+#zstyle ':completion:*:manuals.(^1*)' insert-sections true
+
+#redo command list
+zstyle ':completion:*' rehash yes
+
+#change completion style info
+zstyle ':completion:*:default' list-prompt '%S%M matches%s'
+
+#formats
+zstyle ':completion:*:descriptions' format "- %d -"
+zstyle ':completion:*:corrections' format "- %d - (errors %e})"
+
+#group matches
+zstyle ':completion:*' group-name ''
+
 zstyle :compinstall filename '~/.zshrc'
 
 autoload -Uz compinit zcalc
