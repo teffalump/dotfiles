@@ -119,8 +119,8 @@ map <leader>u :source ~/.vimrc<cr>
 
 " folds
 au FocusLost * :wa
-au BufWinLeave * mkview
-au BufWinEnter * silent loadview
+au BufWinLeave * silent! mkview
+au BufWinEnter * silent! loadview
 
 au FileType py set smartindent
 
