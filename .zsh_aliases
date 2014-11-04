@@ -14,6 +14,7 @@ alias devdown='sudo ip link del'
 alias numfiles='find -maxdepth 1 -type f | wc -l'
 alias most_used="cut -f1 -d' ' ${HISTFILE} | sort | uniq -c | sort -rn | head"
 alias bt="wget http://cachefly.cachefly.net/100mb.test"
+alias strings="strings -a"
 
 #"nuke lamers from orbit", lol
 alias banish="varnishncsa -d | grep \/ip | grep -i wget | awk ‘{ print $1 }’ | sort -u | tee -a /etc/hosts.deny"
