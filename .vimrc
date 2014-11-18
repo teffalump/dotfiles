@@ -117,6 +117,9 @@ map <leader>e :e ~/.vimrc<cr>
 " update the system settings from my vimrc file
 map <leader>u :source ~/.vimrc<cr>
 
+" Compile and execute
+map <leader>m :!gcc % && ./a.out<cr>
+
 " folds
 au FocusLost * :wa
 au BufWinLeave * silent! mkview
