@@ -23,6 +23,7 @@ if has("autocmd")
 endif
 
 let mapleader = ","
+set clipboard=unnamedplus
 set modelines=0
 set nocompatible
 set tabstop=4
