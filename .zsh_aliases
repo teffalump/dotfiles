@@ -37,6 +37,7 @@ alias restart='sudo shutdown -r now'
 alias recent='ls -toh | head -n 10'
 alias lock='i3lock -c 800080'
 alias printfind="nmap -oG - -T4 --open -p 515,631,9100"
+alias uzbl="uzbl-tabbed"
 
 #pacman/aur aliases
 alias pkg-update="sudo pacman -Syu"
