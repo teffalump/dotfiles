@@ -59,6 +59,8 @@ alias pkg-update-keys='sudo pacman-key --refresh-keys && sudo pacman-key --popul
 alias pkg-dump="comm -23 <(pacman -Qeq|sort) <(pacman -Qmq|sort) > ${HOME}/usr/pkglist"
 alias pkg-owns="pacman -Qo"
 
+#use sudo with aliases
+alias sudo='sudo '
 
 #listening ports
 alias ports='ss -tulan'
