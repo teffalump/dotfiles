@@ -119,7 +119,7 @@ map <leader>e :e ~/.vimrc<cr>
 map <leader>u :source ~/.vimrc<cr>
 
 " Compile and execute
-map <leader>m :!cc % && ./a.out<cr>
+map <leader>m :!cc -std=c11 % && ./a.out<cr>
 
 " folds
 au FocusLost * :wa
