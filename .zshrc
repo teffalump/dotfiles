@@ -117,14 +117,8 @@ PROMPT=$'\n%{$fg[red]%}%(0?..!!)%{$fg[yellow]%}[!] %{$fg[green]%}%n@%m %{$fg[blu
 #zsh named dirs
 writing=~/Writing
 books=~/Books
-torrents=~/Downloads/torrents
-downloads=~/Downloads/
-: ~writing ~books ~downloads ~torrents
-
-# GPG/SSH stuff
-if [[ -r ~/.keychain/$HOST-sh-gpg ]]; then
-  . ~/.keychain/$HOST-sh-gpg
-fi
+downloads=~/Downloads
+: ~writing ~books ~downloads
 
 # Editing files with sudo (use restricted vim)
 export SUDO_EDITOR=rvim
