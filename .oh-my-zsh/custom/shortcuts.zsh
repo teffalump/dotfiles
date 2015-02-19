@@ -1,4 +1,5 @@
 writing=~/Writing
 books=~/Books
 downloads=~/Downloads
-: ~writing ~books ~downloads
+torrents=/media/Torrents
+: ~writing ~books ~downloads ~torrents
