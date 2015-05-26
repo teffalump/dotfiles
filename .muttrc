@@ -113,6 +113,9 @@ bind index l recall-message
 bind index N search-opposite
 bind pager N search-opposite
 
+# Toggle new re-binding
+bind index Z toggle-new
+
 # Backspace
 bind index,pager  previous-line
 
