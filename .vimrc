@@ -92,6 +92,11 @@ inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 nnoremap ; :
+nnoremap <Leader>w :w<CR>
+
+" Region expand plugin
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
 
 " Save those pesky RO files
 cnoremap sudow w !sudo tee % >/dev/null
