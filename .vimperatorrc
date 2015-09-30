@@ -1,7 +1,6 @@
 set pageinfo=gfm
 set complete=tbf
 set defsearch=s
-set private
 set runtimepath=~/.vimperator
 set maxitems=7
 set noscrollbars
@@ -60,31 +59,6 @@ js << EOF
     {
 q=content.document.location.href;if(document.getSelection){d=document.getSelection();}else{d='';};p=document.title;void(open('https://pinboard.in/add?showtags=yes&url='+encodeURIComponent(q)+'&description='+encodeURIComponent(d)+'&title='+encodeURIComponent(p),'Pinboard','toolbar=no,scrollbars=yes,width=750,height=700'));
 }
-EOF
-
-" Pin to pinboard 'read later'
-map <silent> pl :js read_later()<CR>
-js << EOF
-    read_later=function()
-    {
-q=content.document.location.href;p=document.title;void(t=open('https://pinboard.in/add?later=yes&noui=yes&jump=close&url='+encodeURIComponent(q)+'&title='+encodeURIComponent(p),'Pinboard','toolbar=no,width=100,height=100'));t.blur();
-    }
-
-" Change youtube to specific part
-js <<EOF
-time_changeYoutube= function () { 
-    if (location.hostname=='www.youtube.com') { 
-        var time_m=prompt('How many minutes?') || 0;
-        var time_s=prompt('How many seconds?') || 0;
-        var hash='#t='+time_m+'m'+time_s+'s';
-        if (location.hash==null||location.hash=='') { 
-            window.location.href=window.location.href.replace(/$/, hash); 
-        } 
-        else { 
-            window.location.href=window.location.pathname+window.location.search+hash; 
-        } 
-        }
-    }
 EOF
 
 map <silent> <C-m> :js util.copyToClipboard('<a href="'+content.document.location+'">'+content.document.title+'</a>', true);<CR>
