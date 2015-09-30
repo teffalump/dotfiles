@@ -13,7 +13,7 @@ alias wget='wget -c'
 alias devdown='sudo ip link del'
 alias numfiles='find -maxdepth 1 -type f | wc -l'
 alias most_used="cut -f1 -d' ' ${HISTFILE} | sort | uniq -c | sort -rn | head"
-alias bt="wget http://cachefly.cachefly.net/100mb.test"
+alias bt="wget http://cachefly.cachefly.net/100mb.test -O /dev/null"
 alias strings="strings -a"
 
 #"nuke lamers from orbit", lol
