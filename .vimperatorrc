@@ -1,6 +1,6 @@
 set pageinfo=gfm
-set complete=tbf
-set defsearch=s
+set complete=tbfh
+set defsearch=duckduckgo
 set runtimepath=~/.vimperator
 set maxitems=7
 set noscrollbars
