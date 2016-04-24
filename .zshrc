@@ -77,11 +77,49 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+HISTFILE=~/.histfile
+HISTSIZE=2000
+SAVEHIST=10000
+DIRSTACKSIZE=20
+DIRSTACKFILE=~/.zsh/zdirs
+
+setopt nobeep
+setopt autocd
+setopt histignorealldups
+setopt histverify
+setopt histfindnodups
+setopt histsavenodups
+setopt sharehistory
+setopt autopushd
+setopt pushdsilent
+setopt pushdtohome
+setopt pushdignoredups
+setopt pushdminus
+setopt completealiases
+setopt promptbang
+setopt promptsubst
+bindkey -v
+
+export PATH=$PATH:$HOME/bin
+export EDITOR=vim
+export LANG=en_US.UTF-8
+export SUDO_EDITOR=rvim
+bindkey -v
+
+#only show matching history entries
+bindkey "^[[A" history-beginning-search-backward
+bindkey "^[[B" history-beginning-search-forward
+
+#glob history searching
+bindkey "^R" history-incremental-pattern-search-backward
+bindkey "^S" history-incremental-pattern-search-forward
+
+#persistent DIRSTACK across sessions
+if [[ -f $DIRSTACKFILE ]] && [[ $#dirstack -eq 0 ]]; then
+  dirstack=( ${(f)"$(< $DIRSTACKFILE)"} )
+  [[ -d $dirstack[1] ]] && cd $dirstack[1] && cd $OLDPWD
+fi
+#hook function
+chpwd() {
+  print -l $PWD ${(u)dirstack} >$DIRSTACKFILE
+}
