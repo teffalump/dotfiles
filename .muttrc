@@ -31,10 +31,10 @@ set status_chars        = " *%A"
 set status_format       = "───[ Folder: %f ]───[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─%?p?( %p postponed )?───""
 
 # Sidebar Patch
-set sidebar_delim   = '  │'
 set sidebar_visible = yes
 set sidebar_width   = 30
-set sidebar_sort = yes
+set sidebar_short_path = yes
+set sidebar_sort_method = path
 source              ~/.mutt/mailboxes
 source              ~/.mutt/colors
 mailboxes "+ris/-------------"          #dirty hack to add separator
