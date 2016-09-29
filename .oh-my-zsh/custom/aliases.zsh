@@ -15,6 +15,7 @@ alias numfiles='find -maxdepth 1 -type f | wc -l'
 alias most_used="cut -f1 -d' ' ${HISTFILE} | sort | uniq -c | sort -rn | head"
 alias bt="wget http://cachefly.cachefly.net/100mb.test -O /dev/null"
 alias strings="strings -a"
+alias update_vim_plugins="for i in ~/.vim/bundle/*; do git -C $i pull; done"
 
 #"nuke lamers from orbit", lol
 alias banish="varnishncsa -d | grep \/ip | grep -i wget | awk ‘{ print $1 }’ | sort -u | tee -a /etc/hosts.deny"
