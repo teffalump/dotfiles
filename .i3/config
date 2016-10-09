@@ -167,7 +167,8 @@ assign [class="Qbittorrent"] 5
 
 # Quick program launches
 bindsym $mod+w exec libreoffice
-bindsym $mod+b exec dwb
+bindsym $mod+b exec firefox
+bindsym $mod+t exec qbittorrent
 
 # focus follows mouse?
 focus_follows_mouse no
