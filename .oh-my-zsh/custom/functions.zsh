@@ -29,6 +29,11 @@ up()
     cd "$dir";
 }
 
+update_vim_plugins()
+{
+    for i in ~/.vim/bundle/*; do git -C $i pull; done
+}
+
 upstr()
 {
     echo "$(up "$1" && pwd)";

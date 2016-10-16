@@ -107,8 +107,8 @@ export SUDO_EDITOR=rvim
 bindkey -v
 
 #only show matching history entries
-bindkey "^[[A" history-beginning-search-backward
-bindkey "^[[B" history-beginning-search-forward
+bindkey "$terminfo[kcuu1]" history-beginning-search-backward
+bindkey "$terminfo[kcud1]" history-beginning-search-forward
 
 #glob history searching
 bindkey "^R" history-incremental-pattern-search-backward
