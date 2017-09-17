@@ -12,5 +12,8 @@ xmodmap -e "add Control = Control_L"
 #source x config
 xrdb -merge ~/.Xresources
 
+#systemctl needs DISPLAY
+systemctl --user import-environment DISPLAY
+
 #start i3
 exec i3 
