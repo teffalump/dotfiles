@@ -4,7 +4,9 @@ alias back='cd -'
 alias ls='ls -1 --color=auto'
 alias cp='cp --preserve'
 alias c='clear'
-alias grep='grep --color'
+alias f='find . -name'
+alias grep='grep --color=auto -n'
+alias hs='history | grep --color=auto -n'
 alias df='df -h'
 alias du='du -h'
 #alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
@@ -17,7 +19,7 @@ alias bt="wget http://cachefly.cachefly.net/100mb.test -O /dev/null"
 alias strings="strings -a"
 
 #"nuke lamers from orbit", lol
-alias banish="varnishncsa -d | grep \/ip | grep -i wget | awk ‘{ print $1 }’ | sort -u | tee -a /etc/hosts.deny"
+#alias banish="varnishncsa -d | grep \/ip | grep -i wget | awk ‘{ print $1 }’ | sort -u | tee -a /etc/hosts.deny"
 
 #telnet server that broadcasts Star Wars Episode IV as animated text
 alias star-wars='telnet towel.blinkenlights.nl' 
@@ -61,7 +63,7 @@ alias pkg-dump="comm -23 <(pacman -Qeq|sort) <(pacman -Qmq|sort) > ${HOME}/usr/p
 alias pkg-owns="pacman -Qo"
 
 #use sudo with aliases
-alias sudo='sudo '
+#alias sudo='sudo '
 
 #listening ports
 alias ports='ss -tulan'
