@@ -4,7 +4,7 @@ call plug#begin('~/.vim/plugged')
 " plugins
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'scrooloose/nerdcommenter'
-Plug 'altercation/vim-colors-solarized'
+Plug 'icymind/neosolarized'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
@@ -44,12 +44,12 @@ set clipboard=unnamedplus
 set modelines=0
 set nocompatible
 set tabstop=4
+set termguicolors
 set softtabstop=4
 set shiftwidth=4
 set nobackup
 set expandtab
-let g:solarized_termcolors=256
-colorscheme solarized
+colorscheme NeoSolarized
 set background=dark
 set encoding=utf-8
 set scrolloff=3
