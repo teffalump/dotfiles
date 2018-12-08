@@ -1,5 +1,22 @@
-" Pathogen
-call pathogen#infect()
+" vim-plug
+call plug#begin('~/.vim/plugged')
+
+" plugins
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'scrooloose/nerdcommenter'
+Plug 'altercation/vim-colors-solarized'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-git'
+Plug 'terryma/vim-expand-region'
+Plug 'majutsushi/tagbar'
+Plug 'vim-syntastic/syntastic'
+Plug 'ervandew/supertab'
+Plug 'raimondi/delimitmate'
+Plug 'jlanzarotta/bufexplorer'
+call plug#end()
+
+
 filetype plugin indent on
 syntax on
 
