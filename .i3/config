@@ -152,9 +152,6 @@ bar {
         #status_command i3status
 }
 
-# auto-start apps
-exec --no-startup-id pulseaudio --start
-
 # allow switch back to prev if selecting current workspace
 workspace_auto_back_and_forth yes
 
