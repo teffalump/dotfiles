@@ -15,14 +15,22 @@ conky.config = {
     use_spacer = 'none',
     if_up_strictness = 'address',
 }
-
 conky.text = [[
     [
         {"full_text": "${loadavg}",
             "color": "\#FF1493"},
-        {"full_text": "/: ${fs_free /}",
-            "color": "\#FF3400"},
         {"full_text": "TEMP: $acpitemp C",
+        {"full_text": "${if_up tun0}VPN: ${addrs tun0}${endif}",
+            "color": "\#FF5500"},
+        {"full_text": "${if_up wlp4s0}W: ${upspeedf wlp4s0}/${downspeedf wlp4s0} ${addrs wlp4s0}${endif}",
+            "color": "\#FF0000"},
+        {"full_text": "${if_up enp1s0}E: ${upspeedf enp1s0}/${downspeedf enp1s0} ${addrs enp1s0}${endif}",
+            "color": "\#FF0000"},
+        {"full_text": "/:${fs_free /} /media:${fs_free /media} ~:${fs_free /home}",
+            "color": "\#FF3400"},
+        {"full_text": "${execi 7 ponymix get-volume} vol",
+            "color": "\#00FF7F"},
+        {"full_text": "TEMP: ${hwmon temp 1} C",
             "color": "\#00FF00"},
         {"full_text": "${time %a.%d.%m.%Y  %R}",
             "color": "\#FFFFFF"}
