@@ -19,7 +19,6 @@ conky.text = [[
     [
         {"full_text": "${loadavg}",
             "color": "\#FF1493"},
-        {"full_text": "TEMP: $acpitemp C",
         {"full_text": "${if_up tun0}VPN: ${addrs tun0}${endif}",
             "color": "\#FF5500"},
         {"full_text": "${if_up wlp4s0}W: ${upspeedf wlp4s0}/${downspeedf wlp4s0} ${addrs wlp4s0}${endif}",
