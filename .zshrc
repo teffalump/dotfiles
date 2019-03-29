@@ -53,7 +53,7 @@ plugins=(git mercurial)
 
 # User configuration
 
-  export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
 # export MANPATH="/usr/local/man:$MANPATH"
 #
 #
@@ -100,7 +100,7 @@ setopt promptbang
 setopt promptsubst
 bindkey -v
 
-export PATH=$PATH:$HOME/bin:$HOME/.local/bin
+export PATH=$PATH:$HOME/bin:$HOME/.local/bin:$HOME/.cargo/bin
 export EDITOR=vim
 export LANG=en_US.UTF-8
 export SUDO_EDITOR=rvim
