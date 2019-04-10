@@ -21,6 +21,8 @@ Plug 'ervandew/supertab'
 Plug 'raimondi/delimitmate'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'rust-lang/rust.vim'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
 call plug#end()
 
 
