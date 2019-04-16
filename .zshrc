@@ -100,6 +100,11 @@ setopt promptbang
 setopt promptsubst
 bindkey -v
 
+if [ -n "$DISPLAY" ]; then
+    export BROWSER=firefox
+else
+    export BROWSER=links
+fi
 export PATH=$PATH:$HOME/bin:$HOME/.local/bin:$HOME/.cargo/bin
 export EDITOR=vim
 export LANG=en_US.UTF-8
