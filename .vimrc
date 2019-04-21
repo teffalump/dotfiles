@@ -20,6 +20,7 @@ Plug 'vim-syntastic/syntastic'
 Plug 'ervandew/supertab'
 Plug 'raimondi/delimitmate'
 Plug 'jlanzarotta/bufexplorer'
+Plug 'rust-lang/rust.vim'
 call plug#end()
 
 
