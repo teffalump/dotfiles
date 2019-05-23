@@ -13,6 +13,9 @@ input "*" {
     xkb_variant dvorak
     xkb_options ctrl:nocaps
 }
+exec --no-startup-id swayidle \
+        timeout 300 'swaymsg "output * dpms off"' \
+        resume 'swaymsg "output * dpms on"'
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod normal
