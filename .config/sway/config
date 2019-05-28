@@ -144,6 +144,7 @@ bindsym $mod+r mode "resize"
 # Start swaybar to display a workspace bar
 bar {
         tray_output primary
+        #swaybar_command waybar
         mode hide
         modifier Mod4
 
