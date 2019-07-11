@@ -58,7 +58,7 @@ window#waybar.chromium {
     border-bottom: 3px solid #ffffff;
 }
 
-#clock, #battery, #cpu, #memory, #temperature, #backlight, #network, #pulseaudio, #custom-media, #tray, #mode, #idle_inhibitor, #custom-pacman, #custom-cmus {
+#clock, #battery, #cpu, #memory, #disk, #temperature, #backlight, #network, #pulseaudio, #custom-media, #tray, #mode, #idle_inhibitor, #custom-pacman, #custom-cmus {
     padding: 0 10px;
     margin: 0 5px;
     color: #ffffff;
@@ -109,7 +109,8 @@ label:focus {
 }
 
 #backlight {
-    background: #90b1b1;
+    background: #ffff4d;
+    color: #000000;
 }
 
 #network {
@@ -154,6 +155,11 @@ label:focus {
 
 #temperature {
     background: #f0932b;
+    color: #000000;
+}
+
+#disk {
+    background: #0033aa;
 }
 
 #temperature.critical {

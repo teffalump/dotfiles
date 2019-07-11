@@ -3,7 +3,7 @@
     "position": "bottom",
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["sway/window"],
-    "modules-right": ["cpu", "network", "temperature", "clock", "tray"],
+    "modules-right": ["cpu", "custom/cmus", "pulseaudio", "custom/pacman", "network", "disk", "battery", "backlight", "temperature", "clock", "tray"],
     "sway/window": {
         "max-length": 50
     },
@@ -69,7 +69,7 @@
         "escape": true
     },
     "disk": {
-        "format": "{free}",
+        "format": "/: {free}",
         "path": "/"
     }
 }
