@@ -1,6 +1,6 @@
 * {
     border: none;
-    border-radius: 0;
+    border-radius: 5px;
     font-family: Roboto, Helvetica, Arial, sans-serif;
     font-size: 13px;
     min-height: 0;
@@ -58,7 +58,7 @@ window#waybar.chromium {
     border-bottom: 3px solid #ffffff;
 }
 
-#clock, #battery, #cpu, #memory, #temperature, #backlight, #network, #pulseaudio, #custom-media, #tray, #mode, #idle_inhibitor {
+#clock, #battery, #cpu, #memory, #temperature, #backlight, #network, #pulseaudio, #custom-media, #tray, #mode, #idle_inhibitor, #custom-pacman, #custom-cmus {
     padding: 0 10px;
     margin: 0 5px;
     color: #ffffff;
@@ -134,6 +134,14 @@ label:focus {
     background: #66cc99;
     color: #2a5c45;
     min-width: 100px;
+}
+
+#custom-pacman {
+    background: #7b46aa;
+}
+
+#custom-cmus {
+    background: #301522;
 }
 
 .custom-spotify {

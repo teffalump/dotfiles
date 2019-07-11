@@ -128,3 +128,6 @@ fi
 chpwd() {
   print -l $PWD ${(u)dirstack} >$DIRSTACKFILE
 }
+
+# travis gem
+[ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh

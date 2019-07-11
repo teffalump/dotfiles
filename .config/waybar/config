@@ -3,9 +3,12 @@
     "position": "bottom",
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["sway/window"],
-    "modules-right": ["cpu", "temperature", "clock", "tray"],
+    "modules-right": ["cpu", "network", "temperature", "clock", "tray"],
     "sway/window": {
         "max-length": 50
+    },
+    "sway/workspaces": {
+        "disable-scroll": true
     },
     "cpu": {
         "format": "{load}"
@@ -16,5 +19,53 @@
     },
     "clock": {
         "format-alt": "{:%a, %d. %b  %H:%M}"
+    },
+    "pulseaudio": {
+        "format": "{icon}  {volume}%",
+        "format-bluetooth": "{icon}  {volume}%",
+        "format-muted": "MUTE",
+        "format-icons": {
+          "headphones": "",
+          "default": [
+            "",
+            ""
+          ]
+        },
+        "on-click": "pulsemixer --toggle-mute",
+        "on-click-right": "pavucontrol",
+        "on-scroll-up": "pulsemixer --change-volume +5",
+        "on-scroll-down": "pulsemixer --change-volume -5"
+    },
+    "network": {
+        "format": "{ifname} | {ipaddr}",
+        "format-wifi": "{essid} ({signalStrength}%)  | {ipaddr}",
+        "format-ethernet": "{ifname}  | {ipaddr}",
+        "format-disconnected": "", //An empty format will hide the module.
+        "tooltip-format": "{ifname}",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+        "tooltip-format-ethernet": "{ifname} ",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50,
+        "on-click": "termite -e nmtui"
+    },
+    "custom/pacman": {
+        "format": "{}  ",
+        "interval": 3600,
+        "exec": "checkupdates | wc -l",
+        "exec-if": "exit 0",
+        "on-click": "termite -e 'sudo pacman -Syu'; pkill -SIGRTMIN+8 waybar",
+        "signal": 8
+    },
+    "custom/cmus": {
+        "format": "{} ♪",
+        "interval": 5,
+        "max-length": 15,
+        "exec": "cmus-remote -C \"format_print '%a - %t'\"",
+        "exec-if": "pgrep cmus",
+        "on-click": "cmus-remote -u",
+        "on-click-right": "cmus-remote -n",
+        "on-scroll-up": "cmus-remote -v +10%",
+        "on-scroll-down": "cmus-remote -v -10%",
+        "escape": true
     }
 }
