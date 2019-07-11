@@ -146,12 +146,12 @@ bindsym $mod+r mode "resize"
 
 # Start swaybar to display a workspace bar
 bar {
-        #swaybar_command waybar
-        mode hide
-        modifier Mod4
+        swaybar_command waybar
+        #mode hide
+        #modifier Mod4
 
         #use conky
-        status_command $HOME/bin/conky-bar
+        #status_command $HOME/bin/conky-bar
 }
 
 # allow switch back to prev if selecting current workspace
