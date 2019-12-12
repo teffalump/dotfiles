@@ -3,7 +3,7 @@
     "position": "bottom",
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["sway/window"],
-    "modules-right": ["cpu", "temperature", "clock", "tray"],
+    "modules-right": ["cpu", "disk", "temperature", "clock", "tray"],
     "sway/window": {
         "max-length": 50
     },
@@ -16,5 +16,9 @@
     },
     "clock": {
         "format-alt": "{:%a, %d. %b  %H:%M}"
+    },
+    "disk": {
+        "format": "{free}",
+        "path": "/"
     }
 }
