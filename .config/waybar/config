@@ -67,5 +67,9 @@
         "on-scroll-up": "cmus-remote -v +10%",
         "on-scroll-down": "cmus-remote -v -10%",
         "escape": true
+    },
+    "disk": {
+        "format": "{free}",
+        "path": "/"
     }
 }
