@@ -1,7 +1,7 @@
 # Base settings
 set $mod Mod1
 set $term alacritty
-set $menu dmenu_path | dmenu | xargs swaymsg exec
+set $menu bemenu-run
 set $left h
 set $down j
 set $up k
@@ -18,7 +18,13 @@ exec --no-startup-id swayidle \
         resume 'swaymsg "output * dpms on"'
 
 # wallpaper
+{{- if (eq .chezmoi.hostname "wind") }}
+output * bg ~/usr/spider.png stretch
+{{- else if (eq .chezmoi.hostname "tower") }}
 output * bg ~/Downloads/wallpapers/wave.png stretch
+{{- else }}
+output * bg #000000 solid_color
+{{- end }}
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod normal
