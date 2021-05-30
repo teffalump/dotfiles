@@ -22,9 +22,11 @@
     "cpu": {
         "format": "{load}"
     },
+    {{- if (eq .chezmoi.hostname "tower") }}
     "temperature": {
         "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input"
     },
+    {{- end }}
     "battery": {
         "format": "{capacity}% {icon}",
         "format-icons": ["", "", "", "", ""]

@@ -1,9 +1,9 @@
 * {
     border: none;
     border-radius: 5px;
-    font-family: {{- if (eq .chezmoi.hostname "tower") }} "Inconsolata"{{ end }}, Roboto, Helvetica, Arial, sans-serif;
+    font-family:{{- if (eq .chezmoi.hostname "tower") }} "Inconsolata", {{ end }} Roboto, Helvetica, Arial, sans-serif;
     font-size: 13px;
-    font-weight: 700;
+    {{- if (eq .chezmoi.hostname "tower") }}font-weight: 700;{{ end }}
     min-height: 0;
 }
 
@@ -124,7 +124,8 @@ label:focus {
 }
 
 #backlight {
-    background: #90b1b1;
+    background: #ffff4d;
+    color: #000000;
 }
 
 #network {
@@ -169,6 +170,7 @@ label:focus {
 
 #temperature {
     background: #f0932b;
+    color: #000000;
 }
 
 #temperature.critical {
