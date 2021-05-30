@@ -1,0 +1,8 @@
+export PATH=$PATH:$HOME/bin
+export EDITOR=vim
+export LANG=en_US.UTF-8
+{{- if (eq .chezmoi.hostname "wind") }}
+eval `keychain --eval -q id_rsa id_ed25519`
+{{- else if (eq .chezmoi.hostname "tower") }}
+eval `keychain --eval -q id_rsa id_ecdsa`
+{{- end }}
