@@ -1,0 +1,10 @@
+writing=~/Writing
+books=~/Books
+downloads=~/Downloads
+music=/Music
+{{- if (eq .chezmoi.hostname "wind") }}
+torrents=/Downloads/torrents
+{{- else if (eq .chezmoi.hostname "tower") }}
+torrents=/media/Torrents
+{{- end }}
+: ~writing ~books ~downloads ~music ~torrents
