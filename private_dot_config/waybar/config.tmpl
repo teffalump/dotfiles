@@ -9,7 +9,7 @@
     "modules-left": ["sway/workspaces", "sway/mode"],
     {{- end }}
     {{- if (eq .chezmoi.hostname "wind") }}
-    "modules-right": ["cpu", "custom/cmus", "pulseaudio", "custom/pacman", "network", "disk","battery","backlight", "temperature", "clock"],
+    "modules-right": ["cpu", "custom/cmus", "pulseaudio", "custom/pacman", "network", "disk", "battery", "backlight", "temperature", "clock"],
     {{- else if (eq .chezmoi.hostname "tower") }}
     "modules-right": ["cpu", "temperature", "network", "pulseaudio", "disk","disk#home","disk#media", "clock", "tray"],
     {{- else }}
@@ -75,6 +75,14 @@
     "disk#home": {
         "format": "/home: {free}",
         "path": "/home"
+    },
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 14,
+        "icon-theme": "Numix-Circle",
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "on-click-middle": "close"
     },
     "pulseaudio": {
         "format": "{volume}% {icon}",
