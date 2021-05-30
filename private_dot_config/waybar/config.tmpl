@@ -1,25 +1,21 @@
 {
     "layer": "top",
     "position": "bottom",
-
-    {{ if (eq .chezmoi.hostname "wind") }}
+    {{- if (eq .chezmoi.hostname "wind") }}
     "modules-left": ["sway/workspaces", "sway/mode", "wlr/taskbar", "tray"],
-    {{ else if (eq .chezmoi.hostname "tower") }}
+    {{- else if (eq .chezmoi.hostname "tower") }}
     "modules-left": ["sway/workspaces", "sway/mode"],
-    {{ else }}
+    {{- else }}
     "modules-left": ["sway/workspaces", "sway/mode"],
-    {{ end }}
-
-    "modules-center": ["sway/window"],
-
-    {{ if (eq .chezmoi.hostname "wind") }}
+    {{- end }}
+    {{- if (eq .chezmoi.hostname "wind") }}
     "modules-right": ["cpu", "custom/cmus", "pulseaudio", "custom/pacman", "network", "disk","battery","backlight", "temperature", "clock"],
-    {{ else if (eq .chezmoi.hostname "tower") }}
+    {{- else if (eq .chezmoi.hostname "tower") }}
     "modules-right": ["cpu", "temperature", "network", "pulseaudio", "disk","disk#home","disk#media", "clock", "tray"],
-    {{ else }}
+    {{- else }}
     "modules-right": ["cpu", "temperature", "network", "pulseaudio", "disk", "clock", "tray"],
-    {{ end }}
-
+    {{- end }}
+    "modules-center": ["sway/window"],
     "sway/window": {
         "max-length": 50
     },
