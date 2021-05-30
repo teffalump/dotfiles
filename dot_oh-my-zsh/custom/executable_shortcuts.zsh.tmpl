@@ -1,9 +1,9 @@
 writing=~/Writing
 books=~/Books
 downloads=~/Downloads
-music=/Music
+music=~/Music
 {{- if (eq .chezmoi.hostname "wind") }}
-torrents=/Downloads/torrents
+torrents=~/Downloads/torrents
 {{- else if (eq .chezmoi.hostname "tower") }}
 torrents=/media/Torrents
 {{- end }}
