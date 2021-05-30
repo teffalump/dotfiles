@@ -1,0 +1,54 @@
+{
+    "layer": "top",
+    "position": "bottom",
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-center": ["sway/window"],
+    "modules-right": ["cpu", "temperature", "network", "pulseaudio", "disk","disk#home","disk#media", "clock", "tray"],
+    "sway/window": {
+        "max-length": 50
+    },
+    "cpu": {
+        "format": "{load}"
+    },
+    "temperature": {
+        "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input"
+    },
+    "battery": {
+        "format": "{capacity}% {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "clock": {
+        "format-alt": "{:%a, %d. %b  %H:%M}"
+    },
+    "network": {
+        "format": "{ifname}__{ipaddr}"
+    },
+    "disk": {
+        "format": "/: {free}",
+        "path": "/"
+    },
+    "disk#media": {
+        "format": "/media: {free}",
+        "path": "/media"
+    },
+    "disk#home": {
+        "format": "/home: {free}",
+        "path": "/home"
+    },
+    "pulseaudio": {
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-muted": "",
+        "format-icons": {
+            "headphones": "",
+            "handsfree": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
+        },
+        "scroll-step": 1,
+        "on-click": "pavucontrol"
+    }
+}

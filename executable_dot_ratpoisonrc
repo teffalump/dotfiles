@@ -1,0 +1,43 @@
+# no startup message
+startup_message off
+
+# blank window
+bind b select -
+
+# semicolon to colon
+bind semicolon colon
+
+#set cmus keybindings - modify keymap so no c-t needed
+definekey top XF86AudioRaiseVolume exec cmus-remote -v +10%
+definekey top XF86AudioLowerVolume exec cmus-remote -v -10%
+definekey top XF86AudioPlay exec cmus-remote -u
+definekey top XF86AudioStop exec cmus-remote -s
+definekey top XF86AudioPrev exec cmus-remote -r
+definekey top XF86AudioNext exec cmus-remote -n
+definekey top XF86AudioMute exec pacmd set-sink-mute 0 $(if [ $(pacmd dump |grep set-sink-mute | cut -f 3 -d' ') = 'no' ]; then echo yes; else echo no; fi;)
+
+
+#set easy program launches
+bind f exec firefox
+bind e exec thunderbird
+bind o exec libreoffice
+bind c exec urxvt
+
+# more intuitive splits
+bind v vsplit
+bind h hsplit
+
+#start screen in detached mode (mostly for music)
+exec screen -d -m
+
+#create multiple workspaces
+exec /usr/bin/rpws init 3 -k
+
+# kill old dzen2 processes, set padding, and start the conky piping to dzen thing
+addhook quit exec killall dzen2
+set padding 0 16 0 0
+exec conky | dzen2 -ta c -e 'sigusr1=hide;sigusr2=unhide' -h '16' -fn 'inconsolata-g' &
+
+# exec script to smartly toggle dzen --> all logic there
+#explicitly
+bind z exec ~/.ratpoison/dzconky.rp

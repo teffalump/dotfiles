@@ -1,0 +1,126 @@
+# Paths
+set sendmail        = /usr/bin/msmtp
+set header_cache    = ~/.mutt/cache/headers
+set message_cachedir= ~/.mutt/cache/bodies
+set certificate_file= ~/.mutt/certificate_file
+set mailcap_path    = ~/.mutt/mailcap
+set tmpdir          = ~/.mutt/temp
+set signature       = ~/.mutt/sig
+
+# Basic Options
+set sendmail_wait       = 0
+set editor              = "vim"
+set use_from            = yes
+set envelope_from       = yes
+set edit_headers        = yes
+set wait_key            = no
+set mbox_type           = Maildir
+set timeout             = 3
+set mail_check          = 0
+set pipe_decode
+set thorough_search
+set imap_check_subscribed
+set delete
+set quit
+unset confirmappend
+unset mark_old
+#source $alias_file
+
+# Status bar
+set status_chars        = " *%A"
+set status_format       = "───[ Folder: %f ]───[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─%?p?( %p postponed )?───""
+
+# Sidebar Patch
+set sidebar_visible = yes
+set sidebar_width   = 30
+set sidebar_short_path = yes
+set sidebar_sort_method = path
+source              ~/.mutt/mailboxes
+source              ~/.mutt/colors
+mailboxes "+ris/-------------"          #dirty hack to add separator
+
+# Sidebar Navigation 
+bind index,pager <down>   sidebar-next
+bind index,pager <up>     sidebar-prev
+bind index,pager <right>  sidebar-open
+
+# Index View Options
+set date_format = "%m/%d/%y"
+set index_format = "[%Z]  %D  %-20.20F  %s"
+set sort = threads                         # like gmail
+set sort_aux = reverse-last-date-received  # like gmail
+set uncollapse_jump                        # don't collapse on an unread message
+set sort_re                                # thread based on regex
+set reply_regexp = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
+
+# Index Key Bindings
+bind index gg       first-entry
+bind index G        last-entry
+bind index R        group-reply
+bind index <tab>    sync-mailbox
+bind index <space>  collapse-thread
+
+# Ctrl-R to mark all as read
+macro index \Cr "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" "mark all messages as read"
+
+# Remove limiting
+macro index a "<limit>all\n" "show all messages (undo limit)"
+
+# Sync email
+macro index o "<shell-escape>offlineimap<enter>"           "run offlineimap to sync all mail"
+macro index O "<shell-escape>offlineimap -qf INBOX<enter>" "run offlineimap to sync inbox"
+
+# Saner copy/move dialogs
+macro index C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
+macro index M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
+
+# Pager View Options 
+set pager_index_lines = 10 # number of index lines to show
+set pager_context = 3      # number of context lines to show
+set pager_stop             # don't go to next message automatically
+set menu_scroll            # scroll in menus
+set tilde                  # show tildes like in vim
+unset markers              # no ugly plus signs
+
+set quote_regexp = "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
+alternative_order text/plain text/enriched text/html
+
+# Notmuch bindings
+macro index S "<enter-command>unset wait_key<enter><shell-escape>notmuch-mutt -r --prompt search<enter><change-folder-readonly>~/.cache/notmuch/mutt/results<enter>" "notmuch: search mail"
+macro index <F9> "<enter-command>unset wait_key<enter><pipe-message>notmuch-mutt -r thread<enter><change-folder-readonly>~/.cache/notmuch/mutt/results<enter><enter-command>set wait_key<enter>" "notmuch: reconstruct thread"
+macro index <F6> "<enter-command>unset wait_key<enter><pipe-message>notmuch-mutt tag -- -inbox<enter>" "notmuch: remove message from inbox"
+
+# Abook (contact management)
+set query_command = "abook --mutt-query '%s'"
+macro index,pager  a "<pipe-message>abook --add-email-quiet<return>" "Add this sender to Abook"
+bind editor        <Tab> complete-query
+
+# Extract URLs
+macro index,pager \cu "<enter-command> set my_pdsave=\$pipe_decode<enter>\
+        <enter-command> unset pipe_decode<enter>\
+        <pipe-message>extract_url<enter>\
+        <enter-command> set pipe_decode=\$my_pdsave<enter>" "get URLs"
+
+# HTML email (eww)
+auto_view text/html
+alternative_order text/plain text/enriched text/html
+
+# Postpone and recall
+bind compose l postpone-message
+bind index l recall-message
+
+# Search bindings
+bind index N search-opposite
+bind pager N search-opposite
+
+# Toggle new re-binding
+bind index Z toggle-new
+
+# Backspace
+bind index,pager  previous-line
+
+# Settings for GPG
+source ~/.mutt/gpg.rc
+
+# Account Settings
+source ~/.mutt/ris

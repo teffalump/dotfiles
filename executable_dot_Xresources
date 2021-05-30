@@ -1,0 +1,15 @@
+URxvt.font: xft:inconsolata-g:bold:pixelsize=18
+URxvt.background: black
+URxvt.foreground: green
+URxvt.saveLines:  5000
+URxvt.scrollBar_right:  true
+URxvt.jumpScroll:  true
+URxvt.multiScroll:  true
+URxvt.letterSpace: -2
+URxvt.perl-ext-common: default,clipboard,url-select
+URxvt.keysym.M-v: perl:clipboard:paste
+URxvt.keysym.M-c: perl:clipboard:copy
+URxvt.keysym.M-C-v: perl:cliboard:paste_escaped
+URxvt.keysym.C-i:    perl:url-select:select_next
+URxvt.url-select.launcher:   /usr/bin/dwb
+URxvt.url-select.underline: true

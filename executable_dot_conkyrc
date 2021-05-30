@@ -1,0 +1,37 @@
+conky.config = {
+    out_to_x = false,
+    own_window = false,
+    background = false,
+    cpu_avg_samples = 2,
+    net_avg_samples = 2,
+    total_run_times = 0,
+    short_units = true,
+    no_buffers = true,
+    out_to_console = true,
+    out_to_stderr = false,
+    extra_newline = false,
+    update_interval = 1.0,
+    uppercase = false,
+    use_spacer = 'none',
+    if_up_strictness = 'address',
+}
+conky.text = [[
+    [
+        {"full_text": "${loadavg}",
+            "color": "\#FF1493"},
+        {"full_text": "${if_up tun0}VPN: ${addrs tun0}${endif}",
+            "color": "\#FF5500"},
+        {"full_text": "${if_up wlp4s0}W: ${upspeedf wlp4s0}/${downspeedf wlp4s0} ${addrs wlp4s0}${endif}",
+            "color": "\#FF0000"},
+        {"full_text": "${if_up enp1s0}E: ${upspeedf enp1s0}/${downspeedf enp1s0} ${addrs enp1s0}${endif}",
+            "color": "\#FF0000"},
+        {"full_text": "/:${fs_free /} /media:${fs_free /media} ~:${fs_free /home}",
+            "color": "\#FF3400"},
+        {"full_text": "${execi 7 ponymix get-volume} vol",
+            "color": "\#00FF7F"},
+        {"full_text": "TEMP: ${hwmon temp 1} C",
+            "color": "\#00FF00"},
+        {"full_text": "${time %a.%d.%m.%Y  %R}",
+            "color": "\#FFFFFF"}
+    ],
+]];

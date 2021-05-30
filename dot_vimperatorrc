@@ -1,0 +1,66 @@
+set pageinfo=gfm
+set complete=tbfh
+set defsearch=duckduckgo
+set runtimepath=~/.vimperator
+set maxitems=7
+set noscrollbars
+set tabnumbers
+set titlestring=
+set verbose=4
+set focuscontent=true
+
+" Some javascript commands
+" Show passwords in forms -- 0 = alert box, keep masked; 1 = remove mask
+map <silent> sp :js showPasswords(0)<CR>
+map <silent> sr :js showPasswords(1)<CR>
+js << EOF
+    showPasswords=function(a) 
+    {
+        var F,j,f,i;
+        var s = new Array();
+        F = content.document.forms;
+        for (j=0; j<F.length; ++j) 
+        { 
+            f = F[j];
+            for (i=0; i<f.length; ++i) 
+            { 
+                if (f.elements[i].type.toLowerCase() == "password")
+                {
+                    if (a)
+                    {
+                        f.elements[i].type = "text";
+                    }
+                    else
+                    {
+                        s.push(f.elements[i].value); 
+                    }
+                }
+            } 
+        } 
+        if (!a)
+        {
+            if (s) 
+            {
+                alert("Passwords in forms on this page:\n\n" + s.join("\n"));
+            }
+            else 
+            {
+                alert("There are no passwords in forms on this page.");
+            }
+        }
+
+    }
+EOF
+
+" Pin to pinboard
+map <silent> pi :js popup_with_tags()<CR>
+js << EOF
+    popup_with_tags=function()
+    {
+q=content.document.location.href;if(document.getSelection){d=document.getSelection();}else{d='';};p=document.title;void(open('https://pinboard.in/add?showtags=yes&url='+encodeURIComponent(q)+'&description='+encodeURIComponent(d)+'&title='+encodeURIComponent(p),'Pinboard','toolbar=no,scrollbars=yes,width=750,height=700'));
+}
+EOF
+
+map <silent> <C-m> :js util.copyToClipboard('<a href="'+content.document.location+'">'+content.document.title+'</a>', true);<CR>
+map <silent> <C-y> :js util.copyToClipboard(content.document.title,true);<CR>
+noremap gb gT

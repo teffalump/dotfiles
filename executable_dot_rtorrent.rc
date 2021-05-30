@@ -1,0 +1,48 @@
+#Settings for rTorrent
+
+#reporting ip
+ip = 1.1.1.1
+
+#peer exchange for non-private torrents?
+peer_exchange = yes
+
+#encryption
+encryption = require,require_RC4
+
+#dht?
+dht = auto
+
+#default save directory
+directory = ~/Downloads/torrents/
+
+#session directory
+session = ~/Downloads/torrents/.session/
+
+#upload throttle (KB/s)
+upload_rate = 45
+
+#port range
+port_range = 42000-50000
+
+#randomize port?
+port_random = yes
+
+#check hash at finish and startup?
+check_hash = no
+
+#filter active - all dling and uling torrents
+schedule = filter_active,30,30,"view_filter = active,\"or={d.get_up_rate=,d.get_down_rate=}\""
+
+#new view, filter by size
+view_add = size
+schedule = filter_size,30,30,"view_filter = size,d.size_files="
+
+#use udp trackers?
+use_udp_trackers = yes
+
+#colors (need color patch)
+# Colors: 0 = black 1 = red 2 = green 3 = yellow 4 = blue 5 = magenta 6 = cyan 7 = white
+#done_fg_color = 5
+#done_bg_color = 0
+#active_fg_color = 1
+#active_bg_color = 4
