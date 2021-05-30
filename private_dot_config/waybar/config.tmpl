@@ -4,7 +4,7 @@
 
     {{ if (eq .chezmoi.hostname "wind") }}
     "modules-left": ["sway/workspaces", "sway/mode", "wlr/taskbar", "tray"],
-    {{ if (eq .chezmoi.hostname "tower") }}
+    {{ else if (eq .chezmoi.hostname "tower") }}
     "modules-left": ["sway/workspaces", "sway/mode"],
     {{ else }}
     "modules-left": ["sway/workspaces", "sway/mode"],
@@ -14,7 +14,7 @@
 
     {{ if (eq .chezmoi.hostname "wind") }}
     "modules-right": ["cpu", "custom/cmus", "pulseaudio", "custom/pacman", "network", "disk","battery","backlight", "temperature", "clock"],
-    {{ if (eq .chezmoi.hostname "tower") }}
+    {{ else if (eq .chezmoi.hostname "tower") }}
     "modules-right": ["cpu", "temperature", "network", "pulseaudio", "disk","disk#home","disk#media", "clock", "tray"],
     {{ else }}
     "modules-right": ["cpu", "temperature", "network", "pulseaudio", "disk", "clock", "tray"],
