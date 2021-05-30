@@ -158,9 +158,6 @@ bar {
         swaybar_command waybar
         mode hide
         modifier Mod4
-
-        #use conky
-        #status_command $HOME/bin/conky-bar
 }
 
 # allow switch back to prev if selecting current workspace
@@ -191,3 +188,5 @@ bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioStop exec playerctl stop
 bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86AudioNext exec playerctl next
+bindsym XF86MonBrightnessDown exec brightnessctl -q set 5%-
+bindsym XF86MonBrightnessUp exec brightnessctl -q set +5%
