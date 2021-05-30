@@ -1,7 +1,7 @@
 * {
     border: none;
-    border-radius: 0;
-    font-family: "Inconsolata", Roboto, Helvetica, Arial, sans-serif;
+    border-radius: 5px;
+    font-family: {{- if (eq .chezmoi.hostname "tower") }} "Inconsolata"{{ end }}, Roboto, Helvetica, Arial, sans-serif;
     font-size: 13px;
     font-weight: 700;
     min-height: 0;
@@ -59,11 +59,25 @@ window#waybar.chromium {
     border-bottom: 3px solid #ffffff;
 }
 
+{{- if (eq .chezmoi.hostname "wind") }}
+#clock, #battery, #cpu, #memory, #disk, #temperature, #backlight, #network, #pulseaudio, #custom-media, #tray, #mode, #idle_inhibitor, #custom-pacman, #custom-cmus {
+    padding: 0 10px;
+    margin: 0 5px;
+    color: #ffffff;
+}
+{{ else if (eq .chezmoi.hostname "tower") }}
 #clock, #battery, #cpu, #memory, #temperature, #backlight, #network, #pulseaudio, #disk, #custom-media, #tray, #mode, #idle_inhibitor {
     padding: 0 8px;
     margin: 0 3px;
     color: #ffffff;
 }
+{{- else }}
+#clock, #battery, #cpu, #memory, #temperature, #backlight, #network, #pulseaudio, #disk, #custom-media, #tray, #mode, #idle_inhibitor {
+    padding: 0 8px;
+    margin: 0 3px;
+    color: #ffffff;
+}
+{{- end }}
 
 #clock {
     background-color: #64727D;
@@ -135,6 +149,14 @@ label:focus {
     background: #66cc99;
     color: #2a5c45;
     min-width: 100px;
+}
+
+#custom-pacman {
+    background: #7b46aa;
+}
+
+#custom-cmus {
+    background: #301522;
 }
 
 .custom-spotify {
