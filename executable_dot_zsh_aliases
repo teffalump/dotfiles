@@ -1,4 +1,4 @@
-alias v='vim'
+alias v='nvim'
 alias sv='sudo -e'
 alias back='cd -'
 alias ls='ls -1 --color=auto'
@@ -18,12 +18,6 @@ alias most_used="cut -f1 -d' ' ${HISTFILE} | sort | uniq -c | sort -rn | head"
 alias bt="wget http://cachefly.cachefly.net/100mb.test -O /dev/null"
 alias strings="strings -a"
 
-#"nuke lamers from orbit", lol
-#alias banish="varnishncsa -d | grep \/ip | grep -i wget | awk ‘{ print $1 }’ | sort -u | tee -a /etc/hosts.deny"
-
-#telnet server that broadcasts Star Wars Episode IV as animated text
-alias star-wars='telnet towel.blinkenlights.nl' 
-
 #telnet nethack game
 alias nethack-server='telnet nethack.alt.org'
 
@@ -33,7 +27,7 @@ alias usage="du -h --max-depth=1 | sort -rh"
 alias tusage="du -h --max-depth=1 | sort -rh | head -n 20"
 alias off="swayidle timeout 1 'swaymsg \"output * dpms off\"' resume 'swaymsg \"output * dpms on\"; pkill -n swayidle'"
 alias img-clean="exiftool -all="
-alias lvim="vim -c \"normal '0\""
+alias lvim="nvim -c \"normal '0\""
 alias recent='ls -toh | head -n 10'
 alias lock='swaylock -c 800080'
 alias printfind="nmap -oG - -T4 --open -p 515,631,9100"
@@ -60,9 +54,6 @@ alias pkg-new-updates="checkupdates"
 alias pkg-update-keys='sudo pacman-key --refresh-keys && sudo pacman-key --populate'
 alias pkg-dump="comm -23 <(pacman -Qeq|sort) <(pacman -Qmq|sort) > ${HOME}/usr/pkglist"
 alias pkg-owns="pacman -Qo"
-
-#use sudo with aliases
-#alias sudo='sudo '
 
 #listening ports
 alias ports='ss -tulan'
