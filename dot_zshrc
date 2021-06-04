@@ -8,6 +8,18 @@ export ZSH=~/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="bullet-train"
+BULLETTRAIN_PROMPT_ORDER=(
+    time
+    status
+    context
+    dir
+    screen
+    virtualenv
+    rust
+    git
+    hg
+    cmd_exec_time
+)
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
