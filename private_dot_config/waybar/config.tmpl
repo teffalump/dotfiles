@@ -11,7 +11,7 @@
     {{- if (eq .chezmoi.hostname "wind") }}
     "modules-right": ["cpu", "custom/cmus", "pulseaudio", "custom/pacman", "network", "disk", "battery", "backlight", "temperature", "clock"],
     {{- else if (eq .chezmoi.hostname "tower") }}
-    "modules-right": ["cpu", "temperature", "network", "pulseaudio", "disk","disk#home","disk#media", "clock", "tray"],
+    "modules-right": ["cpu", "temperature", "network", "custom/media", "pulseaudio", "disk","disk#home","disk#media", "clock", "tray"],
     {{- else }}
     "modules-right": ["cpu", "temperature", "network", "pulseaudio", "disk", "clock", "tray"],
     {{- end }}
@@ -85,6 +85,20 @@
         "tooltip-format": "{title}",
         "on-click": "activate",
         "on-click-middle": "close"
+    },
+    "custom/media": {
+        "format": "{icon} {}",
+        "return-type": "json",
+        "format-icons": {
+            "Playing": " ",
+            "Paused": " ",
+            "default": "🎶"
+        },
+        "tooltip": true,
+        "max-length": 70,
+        "exec": "playerctl metadata --format '{\"text\": \"{{`{{title}}`}}\", \"tooltip\": \"{{`{{playerName}}`}} : {{`{{artist}}`}} | {{`{{title}}`}}\"}' -F",
+        "on-click": "playerctl play-pause",
+        // status requires playerctl status
     },
     "pulseaudio": {
         "format": "{volume}% {icon}",
