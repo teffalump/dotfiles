@@ -17,6 +17,16 @@ exec --no-startup-id swayidle \
         timeout 300 'swaymsg "output * dpms off"' \
         resume 'swaymsg "output * dpms on"'
 
+{{- if (eq .chezmoi.hostname "wind") }}
+
+# Notification
+exec mako
+{{- else if (eq .chezmoi.hostname "tower") }}
+
+# Notification
+exec mako
+{{- end }}
+
 # wallpaper
 {{- if (eq .chezmoi.hostname "wind") }}
 output * bg ~/usr/spider.png stretch
