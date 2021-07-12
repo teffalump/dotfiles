@@ -17,15 +17,9 @@ exec --no-startup-id swayidle \
         timeout 300 'swaymsg "output * dpms off"' \
         resume 'swaymsg "output * dpms on"'
 
-{{- if (eq .chezmoi.hostname "wind") }}
-
-# Notification
-exec mako
-{{- else if (eq .chezmoi.hostname "tower") }}
-
-# Notification
-exec mako
-{{- end }}
+# Import env variables to dbus and systemd-login
+exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+exec hash dbus-update-activation-environment 2>/dev/null && dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
 
 # wallpaper
 {{- if (eq .chezmoi.hostname "wind") }}
