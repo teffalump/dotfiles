@@ -21,6 +21,12 @@ exec --no-startup-id swayidle \
 exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
 exec hash dbus-update-activation-environment 2>/dev/null && dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
 
+{{- if (eq .chezmoi.hostname "tower") }}
+# Dual monitor
+output DP-1 mode 1920x1080@165.003Hz pos 0 0 adaptive_sync on
+output HDMI-A-1 mode 1920x1060@60.000Hz pos 1920 0
+{{- end }}
+
 # wallpaper
 {{- if (eq .chezmoi.hostname "wind") }}
 output * bg ~/usr/spider.png stretch
