@@ -10,7 +10,7 @@ alias hs='history | grep --color=auto -n'
 alias df='df -h'
 alias du='du -h'
 #alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
-alias nocomment="grep -Ev '^[[:blank:]]*(#|//|;)'"
+alias nocomment="grep -Ev '^[[:blank:]]*(#|//|;|$)'"
 alias wget='wget -c'
 alias devdown='sudo ip link del'
 alias numfiles='find -maxdepth 1 -type f | wc -l'
