@@ -9,11 +9,11 @@
     "modules-left": ["sway/workspaces", "sway/mode"],
     {{- end }}
     {{- if (eq .chezmoi.hostname "wind") }}
-    "modules-right": ["cpu", "custom/media", "pulseaudio", "custom/pacman", "network", "disk", "battery", "backlight", "temperature", "clock"],
+    "modules-right": ["cpu", "custom/media", "pulseaudio", "custom/pacman", "network", "network#wireguard", "disk", "battery", "backlight", "temperature", "clock"],
     {{- else if (eq .chezmoi.hostname "tower") }}
-    "modules-right": ["cpu", "temperature", "network", "custom/media", "pulseaudio", "disk","disk#home","disk#media", "clock", "tray"],
+    "modules-right": ["cpu", "temperature", "network", "network#wireguard", "custom/media", "pulseaudio", "disk","disk#home","disk#media", "clock", "tray"],
     {{- else }}
-    "modules-right": ["cpu", "temperature", "network", "pulseaudio", "disk", "clock", "tray"],
+    "modules-right": ["cpu", "temperature", "network", "network#wireguard", "pulseaudio", "disk", "clock", "tray"],
     {{- end }}
     "modules-center": ["sway/window"],
     "sway/window": {
@@ -45,6 +45,14 @@
         "tooltip-format-disconnected": "Disconnected",
         "max-length": 50,
         "on-click": "alacritty -e nmtui"
+    },
+    "network#wireguard": {
+        "interface": "*wg*",
+        "format-ethernet": "{ifname}  | {ipaddr}/{cidr}",
+        "format-linked": "{ifname} (No IP) ",
+        //"format-disconnected": "Disconnected ⚠",
+        "format-disconnected": "", //An empty format will hide the module.
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "custom/pacman": {
         "format": "{}  ",
