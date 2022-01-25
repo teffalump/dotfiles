@@ -1,15 +1,17 @@
+# Updated replacements
+alias ls='exa' #Use exa instead of ls
+alias cat='bat --paging=never' #Use bat instead of cat
+alias grep='rg' #Use ripgrep instead of grep
+
 alias v='nvim'
 alias sv='sudo -e'
 alias back='cd -'
-alias ls='ls -1 --color=auto'
 alias cp='cp --preserve'
 alias c='clear'
 alias f='find . -name'
-alias grep='grep --color=auto -n'
 alias hs='history | grep --color=auto -n'
 alias df='df -h'
 alias du='du -h'
-#alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 alias nocomment="grep -Ev '^[[:blank:]]*(#|//|;|$)'"
 alias wget='wget -c'
 alias devdown='sudo ip link del'
@@ -17,6 +19,7 @@ alias numfiles='find -maxdepth 1 -type f | wc -l'
 alias most_used="cut -f1 -d' ' ${HISTFILE} | sort | uniq -c | sort -rn | head"
 alias bt="wget http://cachefly.cachefly.net/100mb.test -O /dev/null"
 alias strings="strings -a"
+
 
 #telnet nethack game
 alias nethack-server='telnet nethack.alt.org'
@@ -28,11 +31,12 @@ alias tusage="du -h --max-depth=1 | sort -rh | head -n 20"
 alias off="swayidle timeout 1 'swaymsg \"output * dpms off\"' resume 'swaymsg \"output * dpms on\"; pkill -n swayidle'"
 alias img-clean="exiftool -all="
 alias lvim="nvim -c \"normal '0\""
-alias recent='ls -toh | head -n 10'
+#alias recent='ls -toh | head -n 10'
+alias recent='exa --rs newest | head -n 10'
 alias lock='swaylock -c 800080'
 alias printfind="nmap -oG - -T4 --open -p 515,631,9100"
-alias addcf="echo 'nameserver 1.1.1.1' | sudo tee -a /etc/resolv.conf > /dev/null && sudo systemctl restart dnscrypt-proxy"
-alias remcf="sudo sed -i '/1.1.1.1/d' /etc/resolv.conf && sudo systemctl restart dnscrypt-proxy"
+#alias addcf="echo 'nameserver 1.1.1.1' | sudo tee -a /etc/resolv.conf > /dev/null && sudo systemctl restart dnscrypt-proxy"
+#alias remcf="sudo sed -i '/1.1.1.1/d' /etc/resolv.conf && sudo systemctl restart dnscrypt-proxy"
 
 #pacman/aur aliases
 alias pkg-refresh="sudo pacman -Sy"
