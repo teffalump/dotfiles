@@ -6,6 +6,7 @@ alias grep='rg' #Use ripgrep instead of grep
 alias v='nvim'
 alias sv='sudo -e'
 alias back='cd -'
+alias ssh='TERM=xterm-256color ssh'
 alias cp='cp --preserve'
 alias c='clear'
 alias f='find . -name'
