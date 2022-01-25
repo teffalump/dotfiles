@@ -32,7 +32,7 @@ alias off="swayidle timeout 1 'swaymsg \"output * dpms off\"' resume 'swaymsg \"
 alias img-clean="exiftool -all="
 alias lvim="nvim -c \"normal '0\""
 #alias recent='ls -toh | head -n 10'
-alias recent='exa --rs newest | head -n 10'
+alias recent='exa -lrs newest | head -n 10'
 alias lock='swaylock -c 800080'
 alias printfind="nmap -oG - -T4 --open -p 515,631,9100"
 #alias addcf="echo 'nameserver 1.1.1.1' | sudo tee -a /etc/resolv.conf > /dev/null && sudo systemctl restart dnscrypt-proxy"
