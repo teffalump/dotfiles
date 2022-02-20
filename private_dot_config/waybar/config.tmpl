@@ -20,7 +20,8 @@
         "max-length": 50
     },
     "cpu": {
-        "format": "{load}"
+        "format": "{load}",
+        "max-length": 6,
     },
     {{- if (eq .chezmoi.hostname "tower") }}
     "temperature": {
