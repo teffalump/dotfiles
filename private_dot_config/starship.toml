@@ -15,6 +15,7 @@ $hg_branch\
 $rust\
 $python\
 [](fg:#86BBD8 bg:#06969A)\
+$jobs\
 $cmd_duration\
 [](fg:#06969A bg:#2E3440)
 $character
@@ -55,7 +56,11 @@ truncation_length = 3
 truncation_symbol = "…/"
 
 [cmd_duration]
-format = "[ $duration ]($style)"
+format = "[ $duration]($style)"
+style = "bg:#06969A"
+
+[jobs]
+format = "[ $symbol $number]($style)"
 style = "bg:#06969A"
 
 [directory.substitutions]
