@@ -1,0 +1,274 @@
+# PROMPT FORMAT
+# [](#9A348E)\
+format = """
+$time\
+[ ](fg:queenblue bg:violetcrayon)\
+$username\
+$hostname\
+[](bg:blush fg:violetcrayon)\
+$directory\
+[](fg:blush bg:lightsalmon)\
+$git_branch\
+$git_status\
+$hg_branch\
+[](fg:lightsalmon bg:darkskyblue)\
+$rust\
+$python\
+[](fg:darkskyblue bg:viridiangreen)\
+$jobs\
+$cmd_duration\
+[](fg:viridiangreen bg:none)
+$character
+"""
+
+{{- if (eq .chezmoi.hostname "wind") }}
+palette = "pastel_wind"
+{{- else if (eq .chezmoi.hostname "tower") }}
+palette = "pastel_tower"
+{{- else }}
+palette = "pastel"
+{{- end }}
+
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserts a blank line between shell prompts
+add_newline = true
+
+# Palettes
+[palettes.pastel]
+queenblue = "#33658A" #queen blue
+violetcrayon = "#9A348E" #violet crayon
+blush = "#DA627D" #blush
+lightsalmon = "#FCA17D" # light salmon
+darkskyblue = "#86BBD8" #darksky blue
+viridiangreen = "#06969A" #viridian green
+
+[palettes.pastel_wind]
+queenblue = "#33658A" #queen blue
+violetcrayon = "#9A348E" #violet crayon
+blush = "#DA627D" #blush
+lightsalmon = "#FCA17D" # light salmon
+darkskyblue = "#86BBD8" #darksky blue
+viridiangreen = "#06969A" #viridian green
+font = '#E5E9F0'
+
+[palettes.pastel_tower]
+queenblue = "#33658A" #queen blue
+violetcrayon = "#9A348E" #violet crayon
+blush = "#DA627D" #blush
+lightsalmon = "#FCA17D" # light salmon
+darkskyblue = "#86BBD8" #darksky blue
+viridiangreen = "#06969A" #viridian green
+font = '#839496'
+
+[palettes.dracula]
+background = '#282a36'
+foreground = '#f8f8f2'
+black = '#000000'
+red = '#ff5555'
+green = '#50fa7b'
+yellow = '#f1fa8c'
+blue = '#bd93f9'
+magenta = '#ff79c6'
+cyan = '#8be9fd'
+white = '#bfbfbf'
+bright-black = '#4d4d4d'
+bright-red = '#ff6e67'
+bright-green = '#5af78e'
+bright-yellow = '#f4f99d'
+bright-blue = '#caa9fa'
+bright-magenta = '#ff92d0'
+bright-cyan = '#9aedfe'
+bright-white = '#e6e6e6'
+
+# DIM
+#black = '0x14151b'
+#red = '0xff2222'
+#green = '0x1ef956'
+#yellow = '0xebf85b'
+#blue = '0x4d5b86'
+#magenta = '0xff46b0'
+#cyan = '0x59dffc'
+#white = '0xe6e6d1'
+
+[palettes.solarized]
+background = '#002b36' # base03
+foreground = '#839496' # base0
+black = '#073642' # base02
+red = '#dc322f' # red
+green = '#859900' # green
+yellow = '#b58900' # yellow
+blue = '#268bd2' # blue
+magenta = '#d33682' # magenta
+cyan = '#2aa198' # cyan
+white = '#eee8d5' # base2
+bright-black = '#002b36' # base03
+bright-red = '#cb4b16' # irange
+bright-green = '#586e75' # base01
+bright-yellow = '#657b83' # base00
+bright-blue = '#839496' # base0
+bright-magenta = '#6c71c4' # violet
+bright-cyan = '#93a1a1' # base1
+bright-white = '#fdf6e3' # base3
+
+[palettes.nord]
+background = '#2E3440'
+foreground = '#D8DEE9'
+black = '#3B4252'
+red = '#BF616A'
+green = '#A3BE8C'
+yellow = '#EBCB8B'
+blue = '#81A1C1'
+magenta = '#B48EAD'
+cyan = '#88C0D0'
+white = '#E5E9F0'
+bright-black = '#4C566A'
+bright-red = '#BF616A'
+bright-green = '#A3BE8C'
+bright-yellow = '#EBCB8B'
+bright-blue = '#81A1C1'
+bright-magenta = '#B48EAD'
+bright-cyan = '#8FBCBB'
+bright-white = '#ECEFF4'
+
+[palettes.monokai]
+background = '#272822'
+foreground = '#F8F8F2'
+black = '#272822'
+red = '#F92672'
+green = '#A6E22E'
+yellow = '#F4BF75'
+blue = '#66D9EF'
+magenta = '#AE81FF'
+cyan = '#A1EFE4'
+white = '#F8F8F2'
+bright-black = '#75715E'
+bright-red = '#F92672'
+bright-green = '#A6E22E'
+bright-yellow = '#F4BF75'
+bright-blue = '#66D9EF'
+bright-magenta = '#AE81FF'
+bright-cyan = '#A1EFE4'
+bright-white = '#F9F8F5'
+
+# Modules
+[character] # The name of the module we are configuring is "character"
+success_symbol = "[➜](bold green) "
+error_symbol = "[✗](bold red) "
+vimcmd_symbol = "[V ](bold green)"
+format = "$symbol"
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = true
+
+[username]
+show_always = true
+style_user = "bg:violetcrayon fg:font"
+style_root = "bg:violetcrayon fg:font"
+format = '[$user]($style)'
+
+[hostname]
+ssh_only = false
+disabled = false
+style = "bg:violetcrayon fg:font"
+format = '[@$ssh_symbol$hostname ]($style)'
+
+[directory]
+style = "bg:blush fg:font"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[cmd_duration]
+format = "[ $duration ]($style)"
+style = "bg:viridiangreen fg:font"
+
+[jobs]
+format = "[ $symbol $number]($style)"
+style = "bg:viridiangreen fg:font"
+
+[directory.substitutions]
+"Documents" = " "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+# Keep in mind that the order matters. For example:
+# "Important Documents" = "  "
+# will not be replaced, because "Documents" was already substituted before.
+# So either put "Important Documents" before "Documents" or use the substituted version:
+# "Important  " = "  "
+
+[c]
+style = "bg:darkskyblue fg:font"
+format = '[ $symbol ($version) ]($style)'
+
+[docker_context]
+style = "bg:viridiangreen fg:font"
+format = '[ $symbol $context ]($style) $path'
+
+[elixir]
+style = "bg:darkskyblue fg:font"
+format = '[ $symbol ($version) ]($style)'
+
+[elm]
+style = "bg:darkskyblue fg:font"
+format = '[ $symbol ($version) ]($style)'
+
+[git_branch]
+symbol = ""
+style = "bg:lightsalmon fg:font"
+format = '[ $symbol $branch ]($style)'
+
+[git_status]
+style = "bg:lightsalmon fg:font"
+format = '[$all_status $ahead_behind ]($style)'
+
+[hg_branch]
+symbol = ""
+style = "bg:lightsalmon fg:font"
+format = '[ $symbol $branch ]($style)'
+disabled = false
+
+[golang]
+style = "bg:darkskyblue fg:font"
+format = '[ $symbol ($version) ]($style)'
+
+[haskell]
+style = "bg:darkskyblue fg:font"
+format = '[ $symbol ($version) ]($style)'
+
+[java]
+style = "bg:darkskyblue fg:font"
+format = '[ $symbol ($version) ]($style)'
+
+[julia]
+style = "bg:darkskyblue fg:font"
+format = '[ $symbol ($version) ]($style)'
+
+[nodejs]
+style = "bg:darkskyblue fg:font"
+format = '[ $symbol ($version) ]($style)'
+
+[nim]
+style = "bg:darkskyblue fg:font"
+format = '[ $symbol ($version) ]($style)'
+
+[python]
+style = "bg:darkskyblue fg:font"
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+
+[rust]
+style = "bg:darkskyblue fg:font"
+format = '[ $symbol ($version) ]($style)'
+
+[scala]
+style = "bg:darkskyblue fg:font"
+format = '[ $symbol ($version) ]($style)'
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = "bg:queenblue fg:font"
+format = '[ $time ]($style)'
