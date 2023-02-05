@@ -1,7 +1,10 @@
 export PATH=$PATH:$HOME/bin
 export EDITOR=nvim
 export LANG=en_US.UTF-8
-export _JAVA_AWT_WM_NONREPARENTING=1 # Pycharm and similar
+if [ "$XDG_SESSION_DESKTOP" = "sway" ] ; then
+    # JAVA apps (Pycharm, etc)
+    export _JAVA_AWT_WM_NONREPARENTING=1
+fi
 {{- if (eq .chezmoi.hostname "wind") }}
 eval `keychain --eval -q id_ed25519`
 {{- else if (eq .chezmoi.hostname "tower") }}
