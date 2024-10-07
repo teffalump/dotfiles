@@ -14,8 +14,8 @@ input "*" {
     xkb_options ctrl:nocaps
 }
 exec --no-startup-id swayidle \
-        timeout 300 'swaymsg "output * dpms off"' \
-        resume 'swaymsg "output * dpms on"'
+        timeout 300 'swaymsg "output * power off"' \
+        resume 'swaymsg "output * power on"'
 
 # Polkit agent without dependencies
 exec_always /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
@@ -184,6 +184,9 @@ assign [class="Firefox"] 2
 assign [app_id="libreoffice*"] 4
 assign [class="qBittorrent"] 5
 
+# inhibit idle while fullscreen
+for_window [class=".*"] inhibit_idle fullscreen
+for_window [app_id=".*"] inhibit_idle fullscreen
 
 # Quick program launches
 bindsym $mod+w exec libreoffice
@@ -194,7 +197,7 @@ bindsym $mod+t exec qbittorrent
 focus_follows_mouse no
 
 # screen capture
-bindsym --release Print exec grim -g \"$(slurp)\" ~/screenshot-$(date +%Y-%m-%d_%H-%m-%s).png
+bindsym --release Print exec grim -g \"$(slurp)\" - | swappy -f -
 
 # volume/music bindings
 bindsym XF86AudioRaiseVolume exec pulsemixer --change-volume +5
@@ -206,3 +209,6 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86MonBrightnessDown exec brightnessctl -q set 5%-
 bindsym XF86MonBrightnessUp exec brightnessctl -q set +5%
+
+# include configuration snippets
+include /etc/sway/config.d/*
