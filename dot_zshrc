@@ -111,7 +111,7 @@ else
 fi
 [[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh # Z-jump around command
 export FZF_DEFAULT_OPS="--height 40% --layout=reverse --border"
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
+export PATH="/usr/local/sbin:$HOME/.rye/shims:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
 export PATH=$PATH:$HOME/bin:$HOME/.local/bin:$HOME/.cargo/bin
 export SUDO_EDITOR=rvim
 #export VDPAU_DRIVER=radeonsi
