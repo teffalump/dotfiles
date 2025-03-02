@@ -106,7 +106,7 @@ if [[ -n "$SSH_CONNECTION" ]]; then
   export EDITOR=vim
   export TERM=xterm-256color
 else
-  export EDITOR=nvim
+  export EDITOR=helix
   export TERM=alacritty
 fi
 [[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh # Z-jump around command
