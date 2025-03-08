@@ -3,6 +3,10 @@ general.import = [
     "~/.config/alacritty/themes/themes/{{ if (eq .chezmoi.hostname "tower") }}solarized_dark{{ else if (eq .chezmoi.hostname "wind") }}nord{{ else }}dracula{{ end }}.toml"
 ]
 
+### TERMINAL ###
+[terminal]
+shell = { program = "/usr/bin/fish" }
+
 ### FONT ###
 [font]
 size = 14.0
