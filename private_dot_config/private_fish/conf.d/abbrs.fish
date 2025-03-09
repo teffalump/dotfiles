@@ -40,7 +40,7 @@ alias pkg-mirror-update="sudo reflector --sort rate -l 8 --protocol http,https -
 alias pkg-info="pacman -Si"
 alias pkg-search="pacman -Ss"
 alias pkg-orphans="pacman -Qdt"
-alias pkg-remove-orphans='sudo pacman -Rs $(pacman -Qtdq)'
+alias pkg-remove-orphans='pacman -Qtdq | sudo pacman -Rns -'
 alias pkg-install="sudo pacman -S"
 alias pkg-files="pacman -Ql"
 alias pkg-installed-foreigns="pacman -Qmq"
@@ -50,7 +50,7 @@ alias pkg-installed-sizes="pacgraph -c"
 alias pkg-needs="pactree -r"
 alias pkg-new-updates="checkupdates"
 alias pkg-update-keys="sudo pacman-key --refresh-keys && sudo pacman-key --populate"
-alias pkg-dump="comm -23 <(pacman -Qeq|sort) <(pacman -Qmq|sort) > ${HOME}/usr/pkglist"
+alias pkg-dump="comm -23 <(pacman -Qeq|sort) <(pacman -Qmq|sort) > $HOME/usr/pkglist"
 alias pkg-owns="pacman -Qo"
 
 #listening ports
